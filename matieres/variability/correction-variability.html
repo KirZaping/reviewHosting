@@ -2,7 +2,7 @@
 <html>
 
 <head>
-      <title>exam_en</title>
+      <title>correction-variability</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -859,86 +859,306 @@
 
       <div class="crossnote markdown-preview  ">
             <a class="back" href="index.html">← Ressources</a>
-            <h1 id="general-instructions-en">GENERAL INSTRUCTIONS (EN) </h1>
-            <p>You must model each of the following processes <strong>using UML Statecharts</strong>.</p>
-            <p>For each exercise:</p>
+            <h1 id="correction--it1-software-product-lines">Correction — IT1 Software Product Lines </h1>
+            <p><strong>Final Exam — January 2024</strong></p>
+            <hr>
+            <h1 id="-thème-1--introduction">✅ THÈME 1 — Introduction </h1>
+            <hr>
+            <h2 id="1-what-is-the-main-benefit-of-adopting-software-product-lines">1) What is the main benefit of
+                  adopting software product lines? </h2>
+            <p><strong>Réponse correcte : A</strong></p>
+            <h3 id="justification">Justification </h3>
+            <p>Le bénéfice central d’une Software Product Line (SPL) est la <strong>réutilisation systématique des core
+                        assets</strong>, ce qui entraîne :</p>
             <ul>
-                  <li>Clearly identify <strong>states</strong>, <strong>events</strong>, <strong>transitions</strong>,
-                        <strong>guards</strong>, and <strong>actions</strong>.
-                  </li>
-                  <li>Use advanced Statechart mechanisms when relevant:
-                        <ul>
-                              <li>composite states,</li>
-                              <li>concurrent (orthogonal) states,</li>
-                              <li>conditional transitions,</li>
-                              <li>final states,</li>
-                              <li>loops and iterations.</li>
-                        </ul>
-                  </li>
-                  <li>Briefly justify your modeling choices when necessary.</li>
+                  <li>Réduction des coûts de développement à moyen et long terme</li>
+                  <li>Économies d’échelle</li>
+                  <li>Amélioration de la qualité</li>
+            </ul>
+            <p>Les autres propositions sont incorrectes :</p>
+            <ul>
+                  <li>B : faux (la SPL vise à réduire les bugs)</li>
+                  <li>C : faux (elle gère la variabilité, elle ne la réduit pas)</li>
+                  <li>D : faux (la complexité initiale augmente, mais ce n’est pas le bénéfice principal)</li>
             </ul>
             <hr>
-            <h1 id="exercise-a">EXERCISE A </h1>
-            <p>Exercise A<br>
-                  • MyTown Library.<br>
-                  We want to model the process of book borrowing in the MyTown library. The<br>
-                  library has several employees and a set of books that can be borrowed by people<br>
-                  (subscribers). The subscribers can go in the library to make loans of books.<br>
-                  Once the book is borrowed, the borrower can hold it during a certain period and return<br>
-                  it before some due date (every loan is recorded with a due date). If the deadline<br>
-                  is exceeded, a ‘legal’ procedure is begun: the library informs the borrower about<br>
-                  the overdue and put her to an “overdue list”.<br>
-                  Once the “overdue” procedure is engaged, the subscriber cannot borrow the<br>
-                  books. Depending on the period of delay when the subscriber comes to the<br>
-                  library, the subscriber can either only have to return the book, or she is also need<br>
-                  to pay a fine.<br>
-                  Model the process for 1 subscriber. Consider that a subscriber can borrow<br>
-                  maximum 3 books at a time.</p>
-            <p>Irina Rychkova, University Paris 1 129<br>
-                  Advanced System and Process Modeling<br>
-                  Irina Rychkova</p>
+            <h2 id="2-not-a-direct-economic-consequence">2) Not a direct economic consequence </h2>
+            <p><strong>Réponse correcte : D</strong></p>
+            <h3 id="justification-1">Justification </h3>
+            <p>Conséquences économiques directes :</p>
+            <ul>
+                  <li>Réduction du time-to-market</li>
+                  <li>Diminution des coûts de maintenance</li>
+                  <li>Amélioration de la satisfaction client</li>
+            </ul>
+            <p>L’augmentation des coûts de formation est un coût organisationnel possible, mais pas une conséquence
+                  économique directe du modèle SPL.</p>
             <hr>
-            <h1 id="exercise-b">EXERCISE B </h1>
-            <p>Exercise B<br>
-                  Publishing House<br>
-                  We are interested here in the modelling of the process of the publishing house of<br>
-                  MyTown.<br>
-                  This publisher only takes care of the publishing of manuscripts composed of a set of<br>
-                  articles coming from diverse sources.<br>
-                  The process is the following: The authors send the first version of their article to the<br>
-                  publisher. A process of review is then made where several proofreaders review every<br>
-                  article. Every article receives then an evaluation which allows to know if it is<br>
-                  temporarily accepted or not. In the case of an acceptance, the authors send then the<br>
-                  second version of their article. Several proofreaders then also review this version.<br>
-                  Once more, the article can be accepted (this time in a definitive way) or refused. At<br>
-                  that point, the authors send a final version, which can thus be published. The<br>
-                  publisher compiles all the accepted articles together in the same manuscript.<br>
-                  Amendments can be made to improve the manuscript. When the manuscript satisfies<br>
-                  the publisher, the process stops. The publisher can also stop the process if the number<br>
-                  of accepted articles (temporarily or definitively) is not sufficient to be able to publish<br>
-                  the manuscript.</p>
-            <p>Irina Rychkova, University Paris 1 130<br>
-                  Advanced System and Process Modeling<br>
-                  Irina Rychkova</p>
+            <h2 id="3-business-model-statements">3) Business model statements </h2>
+            <p><strong>Réponses correctes : A, B, C, D</strong></p>
+            <h3 id="justification-2">Justification </h3>
+            <p>Le modèle économique SPL repose sur :</p>
+            <ul>
+                  <li>A ✓ Réduction du temps de développement des nouveaux produits</li>
+                  <li>B ✓ Augmentation des coûts initiaux (coût plateforme)</li>
+                  <li>C ✓ Réduction des coûts opérationnels à long terme</li>
+                  <li>D ✓ Amélioration globale de la qualité</li>
+            </ul>
+            <p>Tous ces éléments sont cohérents avec le modèle SPL (fort investissement initial + retour sur
+                  investissement progressif).</p>
             <hr>
-            <h1 id="exercise-c">EXERCISE C </h1>
-            <p>Exercise C<br>
-                  Model the Master Thesis Management process with Statecharts:<br>
-                  • In order to prepare a master thesis, a student has to select a subject and send it to the<br>
-                  assigned supervisor for validation. The supervisor can validate the proposed subject or<br>
-                  request the modifications.<br>
-                  • Once the subject is validated by the supervisor, the student works on the thesis and prepares<br>
-                  the manuscript.<br>
-                  • Once the first version of the manuscript is complete – the student sends it to her supervisor.<br>
-                  The supervisor revises the manuscript and either validates it or sends the comments back to<br>
-                  the student requesting the updates (several iterations can take place prior to finalizing the<br>
-                  manuscript).<br>
-                  • Once the manuscript is validated by the supervisor – the student submits the final version to<br>
-                  the thesis jury and prepares the thesis defense.<br>
-                  • The student has to submit the final version of the manuscript before a deadline defined by<br>
-                  the university. If the manuscript is not submitted before the dedline (not finished, not<br>
-                  validated etc) – the defence cannot take place and the master thesis stops (= failure).<br>
-                  • During the final defence the master thesis is evaluated by the jury and can either pass or fail.</p>
+            <h2 id="4-effect-on-customer-supplier-relationship">4) Effect on customer-supplier relationship </h2>
+            <p><strong>Réponse correcte : C</strong></p>
+            <h3 id="justification-3">Justification </h3>
+            <p>La SPL permet :</p>
+            <ul>
+                  <li>Une réponse plus rapide aux demandes client</li>
+                  <li>Une configuration flexible</li>
+                  <li>Une industrialisation des variantes</li>
+            </ul>
+            <p>Elle n’augmente pas la dépendance ni ne diminue la qualité.</p>
+            <hr>
+            <h2 id="5-cost-of-developing-4-systems">5) Cost of developing 4 systems </h2>
+            <p>Données :</p>
+            <ul>
+                  <li>Coût indépendant = 100</li>
+                  <li>Coût plateforme = 200</li>
+                  <li>Réduction de 50% → coût par système = 50</li>
+            </ul>
+            <p>Calcul :</p>
+            <p>200 + (4 × 50) = 200 + 200 = 400</p>
+            <p><strong>Réponse correcte : A</strong></p>
+            <hr>
+            <h2 id="6-break-even-point">6) Break-even point </h2>
+            <p>Coût indépendant : 100n<br>
+                  Coût SPL : 200 + 50n</p>
+            <p>Équation :</p>
+            <p>100n = 200 + 50n<br>
+                  50n = 200<br>
+                  n = 4</p>
+            <p><strong>Réponse correcte : B</strong></p>
+            <hr>
+            <h2 id="7-nouveau-scénario">7) Nouveau scénario </h2>
+            <p>Données :</p>
+            <ul>
+                  <li>Coût indépendant = 120</li>
+                  <li>Réduction 40% → coût SPL par système = 120 × 0.6 = 72</li>
+                  <li>Coût plateforme = 360</li>
+            </ul>
+            <p>Calcul pour 3 systèmes :</p>
+            <p>360 + (3 × 72) = 360 + 216 = 576</p>
+            <p><strong>Réponse correcte : D</strong></p>
+            <hr>
+            <h1 id="-thème-2--notations-et-domain-engineering">✅ THÈME 2 — Notations et Domain Engineering </h1>
+            <hr>
+            <h2 id="1-notation-spécifique-variabilité">1) Notation spécifique variabilité </h2>
+            <p><strong>Réponse correcte : B (FODA)</strong></p>
+            <p>FODA est la notation historique des Feature Models utilisée pour modéliser la variabilité.</p>
+            <hr>
+            <h2 id="2-dead-feature">2) Dead feature </h2>
+            <p><strong>Réponse correcte : B</strong></p>
+            <p>Une dead feature est une caractéristique qui ne peut jamais être sélectionnée dans aucune configuration
+                  valide.</p>
+            <hr>
+            <h2 id="3-full-mandatory-feature">3) Full mandatory feature </h2>
+            <p><strong>Réponse correcte : C</strong></p>
+            <p>Une full mandatory feature est une feature optionnelle structurellement mais rendue obligatoire par les
+                  contraintes croisées.</p>
+            <hr>
+            <h2 id="4-défauts-typiques-des-feature-models">4) Défauts typiques des feature models </h2>
+            <p><strong>Réponses correctes : A, B, D</strong></p>
+            <ul>
+                  <li>A ✓ Dead features</li>
+                  <li>B ✓ Full mandatory features</li>
+                  <li>D ✓ Contraintes circulaires</li>
+            </ul>
+            <p>Les features sans interdépendance ne constituent pas un défaut.</p>
+            <hr>
+            <p>⚠️ Les questions 5 à 7 dépendent du diagramme du feature model, qui n’est pas visible dans le document
+                  texte fourni.<br>
+                  Une correction rigoureuse nécessite le diagramme.</p>
+            <hr>
+            <h1 id="-thème-3--application-engineering">✅ THÈME 3 — Application Engineering </h1>
+            <hr>
+            <h2 id="1-configuration">1) Configuration </h2>
+            <p><strong>Réponse correcte : A</strong></p>
+            <p>Configuration = sélection d’un ensemble de features pour produire un produit spécifique.</p>
+            <hr>
+            <h2 id="2-derivation">2) Derivation </h2>
+            <p><strong>Réponse correcte : B</strong></p>
+            <p>Derivation = assemblage du produit final à partir des features sélectionnées.</p>
+            <hr>
+            <h2 id="3-activités-en-application-engineering">3) Activités en application engineering </h2>
+            <p><strong>Réponses correctes : B, C</strong></p>
+            <ul>
+                  <li>B ✓ Configuration des features</li>
+                  <li>C ✓ Assemblage du produit</li>
+            </ul>
+            <p><strong>Pourquoi pas A et D ?</strong></p>
+            <p>Question concernée :</p>
+            <blockquote>
+                  <p>What are the activities involved in the application engineering of software product lines?</p>
+            </blockquote>
+            <p>Propositions :<br>
+                  A) Development of core assets<br>
+                  B) Configuring features for a specific product<br>
+                  C) Assembling the final product<br>
+                  D) Maintenance of existing products</p>
+            <p>Réponse donnée : B et C</p>
+            <hr>
+            <p><strong>1️⃣ Rappel fondamental : séparation SPL</strong></p>
+            <p>Une Software Product Line repose sur deux processus distincts :</p>
+            <p><strong>Domain Engineering</strong></p>
+            <p>Objectif : créer la plateforme commune.</p>
+            <p>Activités :</p>
+            <ul>
+                  <li>Analyse du domaine</li>
+                  <li>Modélisation de la variabilité</li>
+                  <li>Développement des core assets</li>
+                  <li>Architecture de référence</li>
+                  <li>Implémentation des composants réutilisables</li>
+            </ul>
+            <p><strong>Application Engineering</strong></p>
+            <p>Objectif : produire un produit spécifique.</p>
+            <p>Activités :</p>
+            <ul>
+                  <li>Configuration (sélection des features)</li>
+                  <li>Vérification des contraintes</li>
+                  <li>Dérivation</li>
+                  <li>Assemblage du produit</li>
+            </ul>
+            <hr>
+            <p><strong>2️⃣ Pourquoi A est faux ?</strong></p>
+            <p>A) Development of core assets</p>
+            <p>Le développement des core assets appartient au <strong>Domain Engineering</strong>, pas à l’Application
+                  Engineering.</p>
+            <p>C’est une erreur fréquente car on associe intuitivement "développement" à toute activité SPL.<br>
+                  Mais dans la définition académique stricte :</p>
+            <p>Application Engineering ne crée pas les assets,<br>
+                  elle les réutilise.</p>
+            <p>Donc A est faux.</p>
+            <hr>
+            <p><strong>3️⃣ Pourquoi D est faux ?</strong></p>
+            <p>D) Maintenance of existing products</p>
+            <p>La maintenance :</p>
+            <ul>
+                  <li>Peut exister dans le cycle de vie global SPL</li>
+                  <li>Mais ne fait pas partie des activités centrales de l’Application Engineering</li>
+            </ul>
+            <p>Dans le modèle théorique SPL :</p>
+            <p>Application Engineering = configuration + dérivation.</p>
+            <p>La maintenance relève :</p>
+            <ul>
+                  <li>soit du cycle de vie produit classique,</li>
+                  <li>soit d’un processus d’évolution de la product line.</li>
+            </ul>
+            <p>Donc D n’est pas une activité constitutive de l’application engineering.</p>
+            <hr>
+            <p><strong>4️⃣ Pourquoi B et C sont correctes ?</strong></p>
+            <p>B) Configuring features for a specific product<br>
+                  C) Assembling the final product</p>
+            <p>Ces deux étapes correspondent exactement à :</p>
+            <ul>
+                  <li>Configuration</li>
+                  <li>Derivation</li>
+            </ul>
+            <p>Qui sont les deux piliers de l’Application Engineering.</p>
+            <hr>
+            <p><strong>5️⃣ Résumé conceptuel important</strong></p>
+            <p>Beaucoup d’étudiants confondent :</p>
+            <p>"Développement dans une SPL"<br>
+                  avec<br>
+                  "Application Engineering"</p>
+            <p>Or :</p>
+            <p>Domain Engineering = produire les briques<br>
+                  Application Engineering = assembler les briques</p>
+            <p>C’est cette distinction qui est testée ici.</p>
+            <hr>
+            <p><strong>Conclusion</strong></p>
+            <h2>A est faux → développement des core assets = Domain Engineering<br>
+                  D est faux → maintenance ≠ activité centrale d’Application Engineering<br>
+                  B et C sont correctes → configuration + dérivation</h2>
+            <h2 id="4-main-purpose">4) Main purpose </h2>
+            <p><strong>Réponse correcte : D</strong></p>
+            <p>L’objectif principal est de produire des instances spécifiques basées sur des configurations valides.</p>
+            <hr>
+            <p>⚠️ Les questions suivantes dépendant du feature model ne peuvent être corrigées sans le diagramme.</p>
+            <hr>
+            <h1 id="-thème-4--application-requirements-matrix">✅ THÈME 4 — Application-Requirements Matrix </h1>
+            <hr>
+            <h2 id="question">Question </h2>
+            <p>Comment utiliser une application-requirements matrix pour construire un modèle SPL ?</p>
+            <hr>
+            <h2 id="réponse-argumentée">Réponse argumentée </h2>
+            <p>L’application-requirements matrix permet d’identifier :</p>
+            <ol>
+                  <li>Les exigences communes</li>
+                  <li>Les exigences variables</li>
+                  <li>Le degré de variabilité</li>
+            </ol>
+            <h3 id="méthodologie">Méthodologie </h3>
+            <ol>
+                  <li>Lister les applications (colonnes)</li>
+                  <li>Lister les exigences (lignes)</li>
+                  <li>Marquer les exigences obligatoires pour chaque application</li>
+            </ol>
+            <h3 id="analyse">Analyse </h3>
+            <ul>
+                  <li>Exigence présente dans toutes les applications → Feature mandatory</li>
+                  <li>Exigence présente dans certaines → Feature optional</li>
+                  <li>Exigences mutuellement exclusives → Alternative group</li>
+                  <li>Regroupements fréquents → Feature group candidate</li>
+            </ul>
+            <hr>
+            <h3 id="exemple">Exemple </h3>
+            <p>Applications : A1, A2, A3</p>
+            <table>
+                  <thead>
+                        <tr>
+                              <th>Requirement</th>
+                              <th>A1</th>
+                              <th>A2</th>
+                              <th>A3</th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                        <tr>
+                              <td>Login</td>
+                              <td>X</td>
+                              <td>X</td>
+                              <td>X</td>
+                        </tr>
+                        <tr>
+                              <td>Payment</td>
+                              <td>X</td>
+                              <td></td>
+                              <td>X</td>
+                        </tr>
+                        <tr>
+                              <td>Export PDF</td>
+                              <td></td>
+                              <td>X</td>
+                              <td></td>
+                        </tr>
+                  </tbody>
+            </table>
+            <p>Déduction :</p>
+            <ul>
+                  <li>Login = mandatory</li>
+                  <li>Payment = optional</li>
+                  <li>Export PDF = optional</li>
+            </ul>
+            <p>Feature Model :</p>
+            <p>Root<br>
+                  ├── Login (mandatory)<br>
+                  ├── Payment (optional)<br>
+                  └── Export PDF (optional)</p>
+            <hr>
+            <h2 id="conclusion">Conclusion </h2>
+            <p>L’application-requirements matrix constitue une étape intermédiaire entre :</p>
+            <p>Application analysis → Domain engineering → Feature modeling</p>
+            <p>Elle permet d’objectiver la commonalité et la variabilité avant la construction formelle du feature
+                  model.</p>
 
       </div>
 
