@@ -50,8 +50,16 @@ h1 {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: clamp(14px, 2.5vw, 24px);
+}
+
+.level-section .grid {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.level-section .card {
+  width: 100%;
 }
 
 .level-section {
@@ -283,7 +291,11 @@ pre {
   }
 
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .level-section .grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 

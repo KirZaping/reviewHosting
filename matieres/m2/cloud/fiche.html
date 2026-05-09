@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>fiche</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"
+        href="file:///c:\Users\wandr\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.20\crossnote\dependencies\katex\katex.min.css">
+
+
+
+
+
+    <style>
+        code[class*=language-],
+        pre[class*=language-] {
+            color: #333;
+            background: 0 0;
+            font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            text-align: left;
+            white-space: pre;
+            word-spacing: normal;
+            word-break: normal;
+            word-wrap: normal;
+            line-height: 1.4;
+            -moz-tab-size: 8;
+            -o-tab-size: 8;
+            tab-size: 8;
+            -webkit-hyphens: none;
+            -moz-hyphens: none;
+            -ms-hyphens: none;
+            hyphens: none
+        }
+
+        pre[class*=language-] {
+            padding: .8em;
+            overflow: auto;
+            border-radius: 3px;
+            background: #f5f5f5
+        }
+
+        :not(pre)>code[class*=language-] {
+            padding: .1em;
+            border-radius: .3em;
+            white-space: normal;
+            background: #f5f5f5
+        }
+
+        .token.blockquote,
+        .token.comment {
+            color: #969896
+        }
+
+        .token.cdata {
+            color: #183691
+        }
+
+        .token.doctype,
+        .token.macro.property,
+        .token.punctuation,
+        .token.variable {
+            color: #333
+        }
+
+        .token.builtin,
+        .token.important,
+        .token.keyword,
+        .token.operator,
+        .token.rule {
+            color: #a71d5d
+        }
+
+        .token.attr-value,
+        .token.regex,
+        .token.string,
+        .token.url {
+            color: #183691
+        }
+
+        .token.atrule,
+        .token.boolean,
+        .token.code,
+        .token.command,
+        .token.constant,
+        .token.entity,
+        .token.number,
+        .token.property,
+        .token.symbol {
+            color: #0086b3
+        }
+
+        .token.prolog,
+        .token.selector,
+        .token.tag {
+            color: #63a35c
+        }
+
+        .token.attr-name,
+        .token.class,
+        .token.class-name,
+        .token.function,
+        .token.id,
+        .token.namespace,
+        .token.pseudo-class,
+        .token.pseudo-element,
+        .token.url-reference .token.variable {
+            color: #795da3
+        }
+
+        .token.entity {
+            cursor: help
+        }
+
+        .token.title,
+        .token.title .token.punctuation {
+            font-weight: 700;
+            color: #1d3e81
+        }
+
+        .token.list {
+            color: #ed6a43
+        }
+
+        .token.inserted {
+            background-color: #eaffea;
+            color: #55a532
+        }
+
+        .token.deleted {
+            background-color: #ffecec;
+            color: #bd2c00
+        }
+
+        .token.bold {
+            font-weight: 700
+        }
+
+        .token.italic {
+            font-style: italic
+        }
+
+        .language-json .token.property {
+            color: #183691
+        }
+
+        .language-markup .token.tag .token.punctuation {
+            color: #333
+        }
+
+        .language-css .token.function,
+        code.language-css {
+            color: #0086b3
+        }
+
+        .language-yaml .token.atrule {
+            color: #63a35c
+        }
+
+        code.language-yaml {
+            color: #183691
+        }
+
+        .language-ruby .token.function {
+            color: #333
+        }
+
+        .language-markdown .token.url {
+            color: #795da3
+        }
+
+        .language-makefile .token.symbol {
+            color: #795da3
+        }
+
+        .language-makefile .token.variable {
+            color: #183691
+        }
+
+        .language-makefile .token.builtin {
+            color: #0086b3
+        }
+
+        .language-bash .token.keyword {
+            color: #0086b3
+        }
+
+        pre[data-line] {
+            position: relative;
+            padding: 1em 0 1em 3em
+        }
+
+        pre[data-line] .line-highlight-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+            display: block;
+            width: 100%
+        }
+
+        pre[data-line] .line-highlight {
+            position: absolute;
+            left: 0;
+            right: 0;
+            padding: inherit 0;
+            margin-top: 1em;
+            background: hsla(24, 20%, 50%, .08);
+            background: linear-gradient(to right, hsla(24, 20%, 50%, .1) 70%, hsla(24, 20%, 50%, 0));
+            pointer-events: none;
+            line-height: inherit;
+            white-space: pre
+        }
+
+        pre[data-line] .line-highlight:before,
+        pre[data-line] .line-highlight[data-end]:after {
+            content: attr(data-start);
+            position: absolute;
+            top: .4em;
+            left: .6em;
+            min-width: 1em;
+            padding: 0 .5em;
+            background-color: hsla(24, 20%, 50%, .4);
+            color: #f4f1ef;
+            font: bold 65%/1.5 sans-serif;
+            text-align: center;
+            vertical-align: .3em;
+            border-radius: 999px;
+            text-shadow: none;
+            box-shadow: 0 1px #fff
+        }
+
+        pre[data-line] .line-highlight[data-end]:after {
+            content: attr(data-end);
+            top: auto;
+            bottom: .4em
+        }
+
+        html body {
+            font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            overflow: initial;
+            box-sizing: border-box;
+            word-wrap: break-word
+        }
+
+        html body>:first-child {
+            margin-top: 0
+        }
+
+        html body h1,
+        html body h2,
+        html body h3,
+        html body h4,
+        html body h5,
+        html body h6 {
+            line-height: 1.2;
+            margin-top: 1em;
+            margin-bottom: 16px;
+            color: #000
+        }
+
+        html body h1 {
+            font-size: 2.25em;
+            font-weight: 300;
+            padding-bottom: .3em
+        }
+
+        html body h2 {
+            font-size: 1.75em;
+            font-weight: 400;
+            padding-bottom: .3em
+        }
+
+        html body h3 {
+            font-size: 1.5em;
+            font-weight: 500
+        }
+
+        html body h4 {
+            font-size: 1.25em;
+            font-weight: 600
+        }
+
+        html body h5 {
+            font-size: 1.1em;
+            font-weight: 600
+        }
+
+        html body h6 {
+            font-size: 1em;
+            font-weight: 600
+        }
+
+        html body h1,
+        html body h2,
+        html body h3,
+        html body h4,
+        html body h5 {
+            font-weight: 600
+        }
+
+        html body h5 {
+            font-size: 1em
+        }
+
+        html body h6 {
+            color: #5c5c5c
+        }
+
+        html body strong {
+            color: #000
+        }
+
+        html body del {
+            color: #5c5c5c
+        }
+
+        html body a:not([href]) {
+            color: inherit;
+            text-decoration: none
+        }
+
+        html body a {
+            color: #08c;
+            text-decoration: none
+        }
+
+        html body a:hover {
+            color: #00a3f5;
+            text-decoration: none
+        }
+
+        html body img {
+            max-width: 100%
+        }
+
+        html body>p {
+            margin-top: 0;
+            margin-bottom: 16px;
+            word-wrap: break-word
+        }
+
+        html body>ol,
+        html body>ul {
+            margin-bottom: 16px
+        }
+
+        html body ol,
+        html body ul {
+            padding-left: 2em
+        }
+
+        html body ol.no-list,
+        html body ul.no-list {
+            padding: 0;
+            list-style-type: none
+        }
+
+        html body ol ol,
+        html body ol ul,
+        html body ul ol,
+        html body ul ul {
+            margin-top: 0;
+            margin-bottom: 0
+        }
+
+        html body li {
+            margin-bottom: 0
+        }
+
+        html body li.task-list-item {
+            list-style: none
+        }
+
+        html body li>p {
+            margin-top: 0;
+            margin-bottom: 0
+        }
+
+        html body .task-list-item-checkbox {
+            margin: 0 .2em .25em -1.8em;
+            vertical-align: middle
+        }
+
+        html body .task-list-item-checkbox:hover {
+            cursor: pointer
+        }
+
+        html body blockquote {
+            margin: 16px 0;
+            font-size: inherit;
+            padding: 0 15px;
+            color: #5c5c5c;
+            background-color: #f0f0f0;
+            border-left: 4px solid #d6d6d6
+        }
+
+        html body blockquote>:first-child {
+            margin-top: 0
+        }
+
+        html body blockquote>:last-child {
+            margin-bottom: 0
+        }
+
+        html body hr {
+            height: 4px;
+            margin: 32px 0;
+            background-color: #d6d6d6;
+            border: 0 none
+        }
+
+        html body table {
+            margin: 10px 0 15px 0;
+            border-collapse: collapse;
+            border-spacing: 0;
+            display: block;
+            width: 100%;
+            overflow: auto;
+            word-break: normal;
+            word-break: keep-all
+        }
+
+        html body table th {
+            font-weight: 700;
+            color: #000
+        }
+
+        html body table td,
+        html body table th {
+            border: 1px solid #d6d6d6;
+            padding: 6px 13px
+        }
+
+        html body dl {
+            padding: 0
+        }
+
+        html body dl dt {
+            padding: 0;
+            margin-top: 16px;
+            font-size: 1em;
+            font-style: italic;
+            font-weight: 700
+        }
+
+        html body dl dd {
+            padding: 0 16px;
+            margin-bottom: 16px
+        }
+
+        html body code {
+            font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+            font-size: .85em;
+            color: #000;
+            background-color: #f0f0f0;
+            border-radius: 3px;
+            padding: .2em 0
+        }
+
+        html body code::after,
+        html body code::before {
+            letter-spacing: -.2em;
+            content: '\00a0'
+        }
+
+        html body pre>code {
+            padding: 0;
+            margin: 0;
+            word-break: normal;
+            white-space: pre;
+            background: 0 0;
+            border: 0
+        }
+
+        html body .highlight {
+            margin-bottom: 16px
+        }
+
+        html body .highlight pre,
+        html body pre {
+            padding: 1em;
+            overflow: auto;
+            line-height: 1.45;
+            border: #d6d6d6;
+            border-radius: 3px
+        }
+
+        html body .highlight pre {
+            margin-bottom: 0;
+            word-break: normal
+        }
+
+        html body pre code,
+        html body pre tt {
+            display: inline;
+            max-width: initial;
+            padding: 0;
+            margin: 0;
+            overflow: initial;
+            line-height: inherit;
+            word-wrap: normal;
+            background-color: transparent;
+            border: 0
+        }
+
+        html body pre code:after,
+        html body pre code:before,
+        html body pre tt:after,
+        html body pre tt:before {
+            content: normal
+        }
+
+        html body blockquote,
+        html body dl,
+        html body ol,
+        html body p,
+        html body pre,
+        html body ul {
+            margin-top: 0;
+            margin-bottom: 16px
+        }
+
+        html body kbd {
+            color: #000;
+            border: 1px solid #d6d6d6;
+            border-bottom: 2px solid #c7c7c7;
+            padding: 2px 4px;
+            background-color: #f0f0f0;
+            border-radius: 3px
+        }
+
+        @media print {
+            html body {
+                background-color: #fff
+            }
+
+            html body h1,
+            html body h2,
+            html body h3,
+            html body h4,
+            html body h5,
+            html body h6 {
+                color: #000;
+                page-break-after: avoid
+            }
+
+            html body blockquote {
+                color: #5c5c5c
+            }
+
+            html body pre {
+                page-break-inside: avoid
+            }
+
+            html body table {
+                display: table
+            }
+
+            html body img {
+                display: block;
+                max-width: 100%;
+                max-height: 100%
+            }
+
+            html body code,
+            html body pre {
+                word-wrap: break-word;
+                white-space: pre
+            }
+        }
+
+        .markdown-preview {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box
+        }
+
+        .markdown-preview ul {
+            list-style: disc
+        }
+
+        .markdown-preview ul ul {
+            list-style: circle
+        }
+
+        .markdown-preview ul ul ul {
+            list-style: square
+        }
+
+        .markdown-preview ol {
+            list-style: decimal
+        }
+
+        .markdown-preview ol ol,
+        .markdown-preview ul ol {
+            list-style-type: lower-roman
+        }
+
+        .markdown-preview ol ol ol,
+        .markdown-preview ol ul ol,
+        .markdown-preview ul ol ol,
+        .markdown-preview ul ul ol {
+            list-style-type: lower-alpha
+        }
+
+        .markdown-preview .newpage,
+        .markdown-preview .pagebreak {
+            page-break-before: always
+        }
+
+        .markdown-preview pre.line-numbers {
+            position: relative;
+            padding-left: 3.8em;
+            counter-reset: linenumber
+        }
+
+        .markdown-preview pre.line-numbers>code {
+            position: relative
+        }
+
+        .markdown-preview pre.line-numbers .line-numbers-rows {
+            position: absolute;
+            pointer-events: none;
+            top: 1em;
+            font-size: 100%;
+            left: 0;
+            width: 3em;
+            letter-spacing: -1px;
+            border-right: 1px solid #999;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        .markdown-preview pre.line-numbers .line-numbers-rows>span {
+            pointer-events: none;
+            display: block;
+            counter-increment: linenumber
+        }
+
+        .markdown-preview pre.line-numbers .line-numbers-rows>span:before {
+            content: counter(linenumber);
+            color: #999;
+            display: block;
+            padding-right: .8em;
+            text-align: right
+        }
+
+        .markdown-preview .mathjax-exps .MathJax_Display {
+            text-align: center !important
+        }
+
+        .markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group {
+            display: none
+        }
+
+        .markdown-preview:not([data-for=preview]) .code-chunk .status {
+            display: none
+        }
+
+        .markdown-preview:not([data-for=preview]) .code-chunk .output-div {
+            margin-bottom: 16px
+        }
+
+        .markdown-preview .md-toc {
+            padding: 0
+        }
+
+        .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link {
+            display: inline;
+            padding: .25rem 0
+        }
+
+        .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,
+        .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p {
+            display: inline
+        }
+
+        .markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
+            font-weight: 800
+        }
+
+        .scrollbar-style::-webkit-scrollbar {
+            width: 8px
+        }
+
+        .scrollbar-style::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: transparent
+        }
+
+        .scrollbar-style::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background-color: rgba(150, 150, 150, .66);
+            border: 4px solid rgba(150, 150, 150, .66);
+            background-clip: content-box
+        }
+
+        html body[for=html-export]:not([data-presentation-mode]) {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            overflow: auto
+        }
+
+        html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+            position: relative;
+            top: 0;
+            min-height: 100vh
+        }
+
+        @media screen and (min-width:914px) {
+            html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+                padding: 2em calc(50% - 457px + 2em)
+            }
+        }
+
+        @media screen and (max-width:914px) {
+            html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+                padding: 2em
+            }
+        }
+
+        @media screen and (max-width:450px) {
+            html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+                font-size: 14px !important;
+                padding: 1em
+            }
+        }
+
+        @media print {
+            html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn {
+                display: none
+            }
+        }
+
+        html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn {
+            position: fixed;
+            bottom: 8px;
+            left: 8px;
+            font-size: 28px;
+            cursor: pointer;
+            color: inherit;
+            z-index: 99;
+            width: 32px;
+            text-align: center;
+            opacity: .4
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn {
+            opacity: 1
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 100%;
+            padding: 32px 0 48px 0;
+            font-size: 14px;
+            box-shadow: 0 0 4px rgba(150, 150, 150, .33);
+            box-sizing: border-box;
+            overflow: auto;
+            background-color: inherit
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar {
+            width: 8px
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: transparent
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background-color: rgba(150, 150, 150, .66);
+            border: 4px solid rgba(150, 150, 150, .66);
+            background-clip: content-box
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a {
+            text-decoration: none
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc {
+            padding: 0 16px
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link {
+            display: inline;
+            padding: .25rem 0
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p {
+            display: inline
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
+            font-weight: 800
+        }
+
+        html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+            left: 300px;
+            width: calc(100% - 300px);
+            padding: 2em calc(50% - 457px - 300px / 2);
+            margin: 0;
+            box-sizing: border-box
+        }
+
+        @media screen and (max-width:1274px) {
+            html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+                padding: 2em
+            }
+        }
+
+        @media screen and (max-width:450px) {
+            html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+                width: 100%
+            }
+        }
+
+        html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview {
+            left: 50%;
+            transform: translateX(-50%)
+        }
+
+        html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc {
+            display: none
+        }
+
+        /* Please visit the URL below for more information: */
+        /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+    </style>
+    <!-- The content below will be included at the end of the <head> element. -->
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            // your code here
+        });
+    </script>
+</head>
+
+<body for="html-export">
+
+
+    <div class="crossnote markdown-preview  ">
+        <a class="back" href="index.html">← Ressources</a>
+        <h1 id="fiche-de-révision--cloud-computing--architectures-si">Fiche de révision — Cloud Computing &amp;
+            Architectures SI </h1>
+        <p><strong>Orientation examen écrit – analyse, justification, recommandation</strong></p>
+        <blockquote>
+            <p>Objectif : fiche exploitable seule, centrée sur le raisonnement, les choix argumentés et les pièges
+                classiques d’examen.<br>
+                Aucune implémentation, aucun code, aucun schéma technique détaillé.</p>
+        </blockquote>
+        <hr>
+        <h2 id="1-cloud-computing-définition-nist">1. Cloud Computing (définition NIST) </h2>
+        <h3 id="1-définition">1. Définition </h3>
+        <p>Modèle permettant un accès réseau ubiquitaire, à la demande, à un pool partagé de ressources configurables
+            (serveurs, stockage, applications), rapidement provisionnées et libérées avec un effort de gestion minimal.
+        </p>
+        <h3 id="2-objectif--à-quoi-ça-sert">2. Objectif / À quoi ça sert </h3>
+        <p>Mutualiser les ressources, réduire les coûts fixes, améliorer l’agilité et l’élasticité des systèmes
+            d’information.</p>
+        <h3 id="3-contextes-dutilisation">3. Contextes d’utilisation </h3>
+        <p>Organisations cherchant flexibilité, rapidité de déploiement, adaptation à des charges variables, réduction
+            du time-to-market.</p>
+        <h3 id="4-avantages-principaux">4. Avantages principaux </h3>
+        <ul>
+            <li>Élasticité et scalabilité</li>
+            <li>Paiement à l’usage</li>
+            <li>Industrialisation de l’IT</li>
+            <li>Accélération des projets</li>
+        </ul>
+        <h3 id="5-limites--risques">5. Limites / risques </h3>
+        <ul>
+            <li>Dépendance au fournisseur (lock-in)</li>
+            <li>Enjeux de sécurité et de conformité</li>
+            <li>Perte partielle de contrôle</li>
+        </ul>
+        <h3 id="6-comparaisons-clés">6. Comparaisons clés </h3>
+        <ul>
+            <li>Cloud vs on-premise : agilité et élasticité contre contrôle total</li>
+        </ul>
+        <h3 id="7-pièges-classiques">7. Pièges classiques </h3>
+        <p>Assimiler le Cloud à un simple hébergement distant.</p>
+        <h3 id="8-indices-typiques-en-énoncé">8. Indices typiques en énoncé </h3>
+        <p>« À la demande », « paiement à l’usage », « montée en charge rapide ».</p>
+        <hr>
+        <h2 id="2-virtualisation">2. Virtualisation </h2>
+        <h3 id="1-définition-1">1. Définition </h3>
+        <p>Abstraction des ressources matérielles permettant l’exécution de plusieurs systèmes isolés sur un même hôte
+            physique.</p>
+        <h3 id="2-objectif">2. Objectif </h3>
+        <p>Optimiser l’utilisation du matériel et isoler les environnements.</p>
+        <h3 id="3-contextes">3. Contextes </h3>
+        <p>Datacenters, Cloud IaaS, consolidation de serveurs.</p>
+        <h3 id="4-avantages">4. Avantages </h3>
+        <ul>
+            <li>Isolation</li>
+            <li>Flexibilité</li>
+            <li>Mutualisation des ressources</li>
+        </ul>
+        <h3 id="5-limites">5. Limites </h3>
+        <ul>
+            <li>Overhead</li>
+            <li>Démarrage lent</li>
+            <li>Granularité limitée</li>
+        </ul>
+        <h3 id="6-comparaisons-clés-1">6. Comparaisons clés </h3>
+        <p>Virtualisation vs conteneurisation.</p>
+        <h3 id="7-pièges">7. Pièges </h3>
+        <p>Confondre machine virtuelle et conteneur.</p>
+        <h3 id="8-indices">8. Indices </h3>
+        <p>Hyperviseur, VM, image système.</p>
+        <hr>
+        <h2 id="3-conteneurisation">3. Conteneurisation </h2>
+        <h3 id="1-définition-2">1. Définition </h3>
+        <p>Isolation applicative au niveau du système d’exploitation, sans OS invité.</p>
+        <h3 id="2-objectif-1">2. Objectif </h3>
+        <p>Portabilité applicative et déploiement rapide.</p>
+        <h3 id="3-contextes-1">3. Contextes </h3>
+        <p>Microservices, CI/CD, architectures Cloud-native.</p>
+        <h3 id="4-avantages-1">4. Avantages </h3>
+        <ul>
+            <li>Légèreté</li>
+            <li>Rapidité de démarrage</li>
+            <li>Standardisation</li>
+        </ul>
+        <h3 id="5-limites-1">5. Limites </h3>
+        <ul>
+            <li>Isolation moindre que les VM</li>
+            <li>Sécurité à maîtriser</li>
+        </ul>
+        <h3 id="6-comparaisons-clés-2">6. Comparaisons clés </h3>
+        <p>Conteneurs vs machines virtuelles.</p>
+        <h3 id="7-pièges-1">7. Pièges </h3>
+        <p>Penser que les conteneurs remplacent toujours les VM.</p>
+        <h3 id="8-indices-1">8. Indices </h3>
+        <p>Images applicatives, orchestration, portabilité.</p>
+        <hr>
+        <h2 id="4-iaas-infrastructure-as-a-service">4. IaaS (Infrastructure as a Service) </h2>
+        <h3 id="1-définition-3">1. Définition </h3>
+        <p>Fourniture d’infrastructure virtualisée (compute, stockage, réseau).</p>
+        <h3 id="2-objectif-2">2. Objectif </h3>
+        <p>Externaliser le matériel tout en conservant le contrôle logiciel.</p>
+        <h3 id="3-contextes-2">3. Contextes </h3>
+        <p>Applications existantes, besoins spécifiques OS/réseau.</p>
+        <h3 id="4-avantages-2">4. Avantages </h3>
+        <ul>
+            <li>Flexibilité maximale</li>
+            <li>Contrôle élevé</li>
+        </ul>
+        <h3 id="5-limites-2">5. Limites </h3>
+        <ul>
+            <li>Gestion lourde</li>
+            <li>Responsabilités importantes côté client</li>
+        </ul>
+        <h3 id="6-comparaisons-clés-3">6. Comparaisons clés </h3>
+        <p>IaaS vs PaaS : contrôle contre productivité.</p>
+        <h3 id="7-pièges-2">7. Pièges </h3>
+        <p>Reproduire un on-premise dans le Cloud sans adaptation.</p>
+        <h3 id="8-indices-2">8. Indices </h3>
+        <p>VM, OS géré par le client.</p>
+        <hr>
+        <h2 id="5-paas-platform-as-a-service">5. PaaS (Platform as a Service) </h2>
+        <h3 id="1-définition-4">1. Définition </h3>
+        <p>Plateforme gérée fournissant environnement d’exécution et services associés.</p>
+        <h3 id="2-objectif-3">2. Objectif </h3>
+        <p>Se concentrer sur le développement applicatif.</p>
+        <h3 id="3-contextes-3">3. Contextes </h3>
+        <p>Applications web, équipes réduites, délais courts.</p>
+        <h3 id="4-avantages-3">4. Avantages </h3>
+        <ul>
+            <li>Productivité accrue</li>
+            <li>Maintenance réduite</li>
+        </ul>
+        <h3 id="5-limites-3">5. Limites </h3>
+        <ul>
+            <li>Moins de contrôle</li>
+            <li>Lock-in potentiel</li>
+        </ul>
+        <h3 id="6-comparaisons-clés-4">6. Comparaisons clés </h3>
+        <p>PaaS vs IaaS / SaaS.</p>
+        <h3 id="7-pièges-3">7. Pièges </h3>
+        <p>Sous-estimer la dépendance au fournisseur.</p>
+        <h3 id="8-indices-3">8. Indices </h3>
+        <p>Runtime managé, déploiement applicatif.</p>
+        <hr>
+        <h2 id="6-saas-software-as-a-service">6. SaaS (Software as a Service) </h2>
+        <h3 id="1-définition-5">1. Définition </h3>
+        <p>Logiciel accessible via Internet, entièrement géré par le fournisseur.</p>
+        <h3 id="2-objectif-4">2. Objectif </h3>
+        <p>Utiliser une application sans gestion IT.</p>
+        <h3 id="3-contextes-4">3. Contextes </h3>
+        <p>Fonctions standards (CRM, messagerie, outils collaboratifs).</p>
+        <h3 id="4-avantages-4">4. Avantages </h3>
+        <ul>
+            <li>Simplicité</li>
+            <li>Coût prévisible</li>
+        </ul>
+        <h3 id="5-limites-4">5. Limites </h3>
+        <ul>
+            <li>Personnalisation limitée</li>
+            <li>Dépendance fonctionnelle</li>
+        </ul>
+        <h3 id="6-comparaisons-clés-5">6. Comparaisons clés </h3>
+        <p>SaaS vs développement interne.</p>
+        <h3 id="7-pièges-4">7. Pièges </h3>
+        <p>Penser qu’il n’y a aucune responsabilité côté client.</p>
+        <h3 id="8-indices-4">8. Indices </h3>
+        <p>Application clé en main.</p>
+        <hr>
+        <h2 id="7-faas--serverless">7. FaaS / Serverless </h2>
+        <h3 id="1-définition-6">1. Définition </h3>
+        <p>Exécution de fonctions déclenchées par événements, sans gestion de serveurs.</p>
+        <h3 id="2-objectif-5">2. Objectif </h3>
+        <p>Scalabilité automatique et facturation fine.</p>
+        <h3 id="3-contextes-5">3. Contextes </h3>
+        <p>Charges irrégulières, traitements événementiels.</p>
+        <h3 id="4-avantages-5">4. Avantages </h3>
+        <ul>
+            <li>Élasticité native</li>
+            <li>Coût optimisé</li>
+        </ul>
+        <h3 id="5-limites-5">5. Limites </h3>
+        <ul>
+            <li>Latence à froid</li>
+            <li>Fort lock-in</li>
+        </ul>
+        <h3 id="6-comparaisons-clés-6">6. Comparaisons clés </h3>
+        <p>Serverless vs microservices classiques.</p>
+        <h3 id="7-pièges-5">7. Pièges </h3>
+        <p>Utiliser pour des traitements longs ou persistants.</p>
+        <h3 id="8-indices-5">8. Indices </h3>
+        <p>Événements, fonctions, absence de serveurs visibles.</p>
+        <hr>
+        <h2 id="8-architecture-monolithique">8. Architecture monolithique </h2>
+        <h3 id="1-définition-7">1. Définition </h3>
+        <p>Application unique regroupant toutes les fonctionnalités.</p>
+        <h3 id="2-objectif-6">2. Objectif </h3>
+        <p>Simplicité initiale.</p>
+        <h3 id="3-contextes-6">3. Contextes </h3>
+        <p>Petits projets, équipes réduites.</p>
+        <h3 id="4-avantages-6">4. Avantages </h3>
+        <ul>
+            <li>Simplicité</li>
+            <li>Cohérence globale</li>
+        </ul>
+        <h3 id="5-limites-6">5. Limites </h3>
+        <ul>
+            <li>Scalabilité limitée</li>
+            <li>Couplage fort</li>
+        </ul>
+        <h3 id="6-comparaisons-clés-7">6. Comparaisons clés </h3>
+        <p>Monolithe vs microservices.</p>
+        <h3 id="7-pièges-6">7. Pièges </h3>
+        <p>Considérer le monolithe comme systématiquement mauvais.</p>
+        <h3 id="8-indices-6">8. Indices </h3>
+        <p>Bloc applicatif unique.</p>
+        <hr>
+        <h2 id="9-microservices">9. Microservices </h2>
+        <h3 id="1-définition-8">1. Définition </h3>
+        <p>Services autonomes communiquant via des APIs.</p>
+        <h3 id="2-objectif-7">2. Objectif </h3>
+        <p>Scalabilité indépendante et évolutivité.</p>
+        <h3 id="3-contextes-7">3. Contextes </h3>
+        <p>Systèmes complexes, grandes équipes.</p>
+        <h3 id="4-avantages-7">4. Avantages </h3>
+        <ul>
+            <li>Résilience</li>
+            <li>Agilité organisationnelle</li>
+        </ul>
+        <h3 id="5-limites-7">5. Limites </h3>
+        <ul>
+            <li>Complexité opérationnelle</li>
+            <li>Coûts indirects</li>
+        </ul>
+        <h3 id="6-comparaisons-clés-8">6. Comparaisons clés </h3>
+        <p>Microservices vs monolithe.</p>
+        <h3 id="7-pièges-7">7. Pièges </h3>
+        <p>Adopter les microservices sans maturité organisationnelle.</p>
+        <h3 id="8-indices-7">8. Indices </h3>
+        <p>Services indépendants, communication réseau.</p>
+        <hr>
+        <h2 id="10-event-driven-architecture-eda">10. Event-Driven Architecture (EDA) </h2>
+        <h3 id="1-définition-9">1. Définition </h3>
+        <p>Architecture basée sur la production et la consommation d’événements.</p>
+        <h3 id="2-objectif-8">2. Objectif </h3>
+        <p>Découplage et asynchronisme.</p>
+        <h3 id="3-contextes-8">3. Contextes </h3>
+        <p>Systèmes distribués, intégrations complexes.</p>
+        <h3 id="4-avantages-8">4. Avantages </h3>
+        <ul>
+            <li>Scalabilité</li>
+            <li>Résilience</li>
+        </ul>
+        <h3 id="5-limites-8">5. Limites </h3>
+        <ul>
+            <li>Débogage complexe</li>
+            <li>Observabilité critique</li>
+        </ul>
+        <h3 id="6-comparaisons-clés-9">6. Comparaisons clés </h3>
+        <p>Synchrone vs asynchrone.</p>
+        <h3 id="7-pièges-8">7. Pièges </h3>
+        <p>Sous-estimer la complexité opérationnelle.</p>
+        <h3 id="8-indices-8">8. Indices </h3>
+        <p>Pub/Sub, événements, files de messages.</p>
+        <hr>
+        <h2 id="11-scalabilité-élasticité-et-résilience">11. Scalabilité, élasticité et résilience </h2>
+        <h3 id="1-définition-10">1. Définition </h3>
+        <p>Capacité à absorber la charge, s’adapter dynamiquement et résister aux pannes.</p>
+        <h3 id="2-objectif-9">2. Objectif </h3>
+        <p>Maintenir le service en conditions dégradées.</p>
+        <h3 id="3-contextes-9">3. Contextes </h3>
+        <p>Applications critiques, trafic variable.</p>
+        <h3 id="4-avantages-9">4. Avantages </h3>
+        <ul>
+            <li>Continuité de service</li>
+            <li>Disponibilité élevée</li>
+        </ul>
+        <h3 id="5-limites-9">5. Limites </h3>
+        <ul>
+            <li>Coûts supplémentaires</li>
+            <li>Complexité accrue</li>
+        </ul>
+        <h3 id="6-comparaisons-clés-10">6. Comparaisons clés </h3>
+        <p>Scalabilité verticale vs horizontale.</p>
+        <h3 id="7-pièges-9">7. Pièges </h3>
+        <p>Confondre performance et scalabilité.</p>
+        <h3 id="8-indices-9">8. Indices </h3>
+        <p>Pics de charge, SLA, haute disponibilité.</p>
+        <hr>
+        <h2 id="12-pca--pra--rto--rpo">12. PCA / PRA – RTO / RPO </h2>
+        <h3 id="1-définition-11">1. Définition </h3>
+        <p>Plans et indicateurs de continuité et de reprise après sinistre.</p>
+        <h3 id="2-objectif-10">2. Objectif </h3>
+        <p>Limiter l’impact d’un incident majeur.</p>
+        <h3 id="3-contextes-10">3. Contextes </h3>
+        <p>Systèmes critiques, exigences réglementaires.</p>
+        <h3 id="4-avantages-10">4. Avantages </h3>
+        <ul>
+            <li>Maîtrise du risque</li>
+            <li>Continuité d’activité</li>
+        </ul>
+        <h3 id="5-limites-10">5. Limites </h3>
+        <ul>
+            <li>Coût élevé</li>
+            <li>Complexité organisationnelle</li>
+        </ul>
+        <h3 id="6-comparaisons-clés-11">6. Comparaisons clés </h3>
+        <p>Active/Active vs Active/Passive.</p>
+        <h3 id="7-pièges-10">7. Pièges </h3>
+        <p>PRA non testé ou irréaliste.</p>
+        <h3 id="8-indices-10">8. Indices </h3>
+        <p>Arrêt prolongé, perte de données.</p>
+        <hr>
+        <h2 id="13-sécurité-cloud-et-responsabilité-partagée">13. Sécurité Cloud et responsabilité partagée </h2>
+        <h3 id="1-définition-12">1. Définition </h3>
+        <p>Répartition des responsabilités de sécurité entre fournisseur et client.</p>
+        <h3 id="2-objectif-11">2. Objectif </h3>
+        <p>Clarifier qui sécurise quoi.</p>
+        <h3 id="3-contextes-11">3. Contextes </h3>
+        <p>Tous les modèles Cloud.</p>
+        <h3 id="4-avantages-11">4. Avantages </h3>
+        <ul>
+            <li>Responsabilisation claire</li>
+        </ul>
+        <h3 id="5-limites-11">5. Limites </h3>
+        <ul>
+            <li>Mauvaise compréhension fréquente</li>
+        </ul>
+        <h3 id="6-comparaisons-clés-12">6. Comparaisons clés </h3>
+        <p>Responsabilités en IaaS vs SaaS.</p>
+        <h3 id="7-pièges-11">7. Pièges </h3>
+        <p>Penser que le Cloud est sécurisé par défaut.</p>
+        <h3 id="8-indices-11">8. Indices </h3>
+        <p>Accès, données, conformité.</p>
+        <hr>
+        <h2 id="14-multi-cloud">14. Multi-Cloud </h2>
+        <h3 id="1-définition-13">1. Définition </h3>
+        <p>Utilisation de plusieurs fournisseurs Cloud.</p>
+        <h3 id="2-objectif-12">2. Objectif </h3>
+        <p>Réduire le lock-in et renforcer la résilience stratégique.</p>
+        <h3 id="3-contextes-12">3. Contextes </h3>
+        <p>Grands groupes, contraintes fortes.</p>
+        <h3 id="4-avantages-12">4. Avantages </h3>
+        <ul>
+            <li>Indépendance</li>
+            <li>Flexibilité stratégique</li>
+        </ul>
+        <h3 id="5-limites-12">5. Limites </h3>
+        <ul>
+            <li>Complexité opérationnelle</li>
+            <li>Coûts accrus</li>
+        </ul>
+        <h3 id="6-comparaisons-clés-13">6. Comparaisons clés </h3>
+        <p>Multi-cloud vs cloud hybride.</p>
+        <h3 id="7-pièges-12">7. Pièges </h3>
+        <p>Multi-cloud sans justification métier.</p>
+        <h3 id="8-indices-12">8. Indices </h3>
+        <p>Plusieurs fournisseurs Cloud.</p>
+        <hr>
+        <h2 id="15-infrastructure-as-code-iac">15. Infrastructure as Code (IaC) </h2>
+        <h3 id="1-définition-14">1. Définition </h3>
+        <p>Gestion de l’infrastructure via des descriptions versionnées.</p>
+        <h3 id="2-objectif-13">2. Objectif </h3>
+        <p>Automatisation, reproductibilité et auditabilité.</p>
+        <h3 id="3-contextes-13">3. Contextes </h3>
+        <p>Cloud, environnements multiples.</p>
+        <h3 id="4-avantages-13">4. Avantages </h3>
+        <ul>
+            <li>Fiabilité</li>
+            <li>Traçabilité</li>
+        </ul>
+        <h3 id="5-limites-13">5. Limites </h3>
+        <ul>
+            <li>Courbe d’apprentissage</li>
+            <li>Gouvernance nécessaire</li>
+        </ul>
+        <h3 id="6-comparaisons-clés-14">6. Comparaisons clés </h3>
+        <p>Déclaratif vs impératif.</p>
+        <h3 id="7-pièges-13">7. Pièges </h3>
+        <p>Automatisation sans contrôle.</p>
+        <h3 id="8-indices-13">8. Indices </h3>
+        <p>Provisionnement automatisé, versioning infra.</p>
+        <hr>
+        <h2 id="conclusion--clés-pour-lexamen">Conclusion — Clés pour l’examen </h2>
+        <ul>
+            <li>Toujours <strong>contextualiser</strong> avant de proposer une solution.</li>
+            <li>Justifier chaque choix par des <strong>compromis explicites</strong>.</li>
+            <li>Éviter les réponses absolues ou dogmatiques.</li>
+            <li>Identifier les <strong>mots-clés</strong> révélateurs dans l’énoncé.</li>
+            <li>Conclure par une <strong>recommandation argumentée</strong>, jamais purement technique.</li>
+        </ul>
+
+    </div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
