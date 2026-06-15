@@ -1,0 +1,1002 @@
+<!DOCTYPE html><html><head>
+      <title>Knowledge management</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\wandr\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.29\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-details{margin:0;padding:0;border:none}.markdown-preview .md-toc summary.md-toc-link-wrapper{cursor:pointer;list-style-position:outside}.markdown-preview .md-toc summary.md-toc-link-wrapper::marker{font-size:.85em}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='0']{margin-left:12px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='1']{margin-left:28px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='2']{margin-left:44px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='3']{margin-left:60px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='4']{margin-left:76px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='5']{margin-left:80px}.markdown-preview a.tag,.markdown-preview a.tag:active,.markdown-preview a.tag:link,.markdown-preview a.tag:visited,.markdown-preview span.tag:not(.token){display:inline-block;background-color:var(--vscode-badge-background,rgba(127,127,127,.18));color:var(--vscode-badge-foreground,currentColor);border-radius:2em;font-size:.85em;font-weight:500;padding:.05em .55em;line-height:1.5;white-space:nowrap;text-decoration:none;text-shadow:none;box-shadow:none;transition:background-color .12s ease,opacity .12s ease}.markdown-preview a.tag{cursor:pointer}.markdown-preview a.tag:focus,.markdown-preview a.tag:hover{background-color:var(--vscode-badge-background,rgba(127,127,127,.32));color:var(--vscode-badge-foreground,currentColor);opacity:.85;text-decoration:none;outline:0}.markdown-preview .wikilink-embed-content{border-left:3px solid var(--vscode-textBlockQuote-border,rgba(128,128,128,.3));background:var(--vscode-textBlockQuote-background,rgba(128,128,128,.05));margin:.5em 0;padding:.5em .75em;border-radius:0 3px 3px 0}.markdown-preview .wikilink-embed-content.wikilink-embed-error{border-left-color:var(--vscode-errorForeground,#cf222e);color:var(--vscode-errorForeground,#cf222e);font-style:italic;opacity:.8}.markdown-preview .wikilink-embed-content h1:first-child,.markdown-preview .wikilink-embed-content h2:first-child,.markdown-preview .wikilink-embed-content h3:first-child,.markdown-preview .wikilink-embed-content h4:first-child,.markdown-preview .wikilink-embed-content h5:first-child,.markdown-preview .wikilink-embed-content h6:first-child{margin-top:.25em}.markdown-preview .wikilink-embed-content .wikilink-embed-content{margin:.25em 0;padding:.25em .5em}.markdown-preview .block-id{display:none}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-details{margin:0;padding:0;border:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='0']{padding-left:0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='1']{padding-left:16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='2']{padding-left:32px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='3']{padding-left:48px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='4']{padding-left:64px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='5']{padding-left:80px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+    </head>
+    <body for="html-export">
+      <p style="max-width:914px;margin:1rem auto 0;padding:0 2rem;"><a href="index.html">&larr; Retour &agrave; la mati&egrave;re</a></p>
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="fiche-de-révision-complète--knowledge-management-km">FICHE DE RÉVISION COMPLÈTE – KNOWLEDGE MANAGEMENT (KM) </h1>
+<h2 id="master-2-miage--isi--iksem--université-paris-1-panthéon-sorbonne">Master 2 MIAGE / ISI / IKSEM – Université Paris 1 Panthéon-Sorbonne </h2>
+<hr>
+<h1 id="1-introduction-au-knowledge-management">1. INTRODUCTION AU KNOWLEDGE MANAGEMENT </h1>
+<h2 id="définition">Définition </h2>
+<p>Le Knowledge Management (KM) est l'ensemble des méthodes, outils, processus et technologies permettant de :</p>
+<ul>
+<li>Créer des connaissances</li>
+<li>Capturer des connaissances</li>
+<li>Structurer des connaissances</li>
+<li>Stocker des connaissances</li>
+<li>Partager des connaissances</li>
+<li>Réutiliser des connaissances</li>
+<li>Valoriser des connaissances</li>
+</ul>
+<p>dans le but d'améliorer :</p>
+<ul>
+<li>la performance de l'organisation ;</li>
+<li>l'innovation ;</li>
+<li>la prise de décision ;</li>
+<li>l'apprentissage organisationnel ;</li>
+<li>la compétitivité.</li>
+</ul>
+<hr>
+<h2 id="pourquoi-faire-du-km-">Pourquoi faire du KM ? </h2>
+<p>Sans KM :</p>
+<ul>
+<li>perte de connaissances lors des départs ;</li>
+<li>répétition des erreurs ;</li>
+<li>duplication du travail ;</li>
+<li>faible collaboration ;</li>
+<li>difficulté à prendre des décisions.</li>
+</ul>
+<p>Avec KM :</p>
+<ul>
+<li>conservation du savoir ;</li>
+<li>amélioration de la productivité ;</li>
+<li>accélération de la prise de décision ;</li>
+<li>meilleure innovation ;</li>
+<li>réduction des coûts.</li>
+</ul>
+<hr>
+<h1 id="2-donnée-information-connaissance-sagesse-dikw">2. DONNÉE, INFORMATION, CONNAISSANCE, SAGESSE (DIKW) </h1>
+<h2 id="pyramide-dikw">Pyramide DIKW </h2>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>          Wisdom
+        (Sagesse)
+
+        Knowledge
+      (Connaissance)
+
+      Information
+      (Information)
+
+          Data
+       (Donnée)
+</code></pre><hr>
+<h2 id="data-donnée">Data (Donnée) </h2>
+<p>Fait brut sans contexte.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>20
+15
+85%
+</code></pre><p>Impossible d'interpréter seul.</p>
+<hr>
+<h2 id="information">Information </h2>
+<p>Donnée contextualisée.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>85 % des clients sont satisfaits.
+</code></pre><hr>
+<h2 id="knowledge">Knowledge </h2>
+<p>Information comprise et interprétée.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Les clients sont insatisfaits principalement
+à cause du temps d'attente.
+</code></pre><hr>
+<h2 id="wisdom">Wisdom </h2>
+<p>Utilisation intelligente de la connaissance.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Décider d'embaucher un réceptionniste supplémentaire.
+</code></pre><hr>
+<h1 id="3-types-de-connaissances">3. TYPES DE CONNAISSANCES </h1>
+<h2 id="connaissance-explicite">Connaissance explicite </h2>
+<p>Connaissance formalisée.</p>
+<p>Exemples :</p>
+<ul>
+<li>procédures ;</li>
+<li>manuels ;</li>
+<li>documents ;</li>
+<li>bases de données ;</li>
+<li>rapports.</li>
+</ul>
+<p>Facile à stocker et partager.</p>
+<hr>
+<h2 id="connaissance-tacite">Connaissance tacite </h2>
+<p>Connaissance difficile à formaliser.</p>
+<p>Exemples :</p>
+<ul>
+<li>expérience ;</li>
+<li>intuition ;</li>
+<li>savoir-faire ;</li>
+<li>expertise métier.</li>
+</ul>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Un urbaniste expérimenté qui sait détecter
+rapidement un dossier problématique.
+</code></pre><hr>
+<h2 id="pourquoi-la-connaissance-tacite-est-importante-">Pourquoi la connaissance tacite est importante ? </h2>
+<p>Selon plusieurs études :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>80 à 90 % des connaissances
+d'une organisation sont tacites.
+</code></pre><p>Le principal objectif du KM est souvent :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Transformer le tacite en explicite.
+</code></pre><hr>
+<h1 id="4-modèle-seci-de-nonaka">4. MODÈLE SECI DE NONAKA </h1>
+<p>Transformation de la connaissance.</p>
+<hr>
+<h2 id="1-socialisation-tacite--tacite">1. Socialisation (Tacite → Tacite) </h2>
+<p>Transmission directe.</p>
+<p>Exemples :</p>
+<ul>
+<li>mentorat ;</li>
+<li>compagnonnage ;</li>
+<li>observation.</li>
+</ul>
+<hr>
+<h2 id="2-externalisation-tacite--explicite">2. Externalisation (Tacite → Explicite) </h2>
+<p>Formalisation du savoir.</p>
+<p>Exemples :</p>
+<ul>
+<li>rédaction de guides ;</li>
+<li>interviews d'experts ;</li>
+<li>cartographie cognitive.</li>
+</ul>
+<hr>
+<h2 id="3-combinaison-explicite--explicite">3. Combinaison (Explicite → Explicite) </h2>
+<p>Fusion de connaissances existantes.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Fusionner plusieurs rapports
+pour créer une procédure.
+</code></pre><hr>
+<h2 id="4-internalisation-explicite--tacite">4. Internalisation (Explicite → Tacite) </h2>
+<p>Apprentissage.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Lecture d'un guide puis application pratique.
+</code></pre><hr>
+<h1 id="5-capital-intellectuel">5. CAPITAL INTELLECTUEL </h1>
+<h2 id="définition-1">Définition </h2>
+<p>Ensemble des ressources immatérielles créatrices de valeur.</p>
+<hr>
+<h2 id="1-capital-humain">1. Capital humain </h2>
+<p>Connaissances détenues par les personnes.</p>
+<p>Exemples :</p>
+<ul>
+<li>compétences ;</li>
+<li>expérience ;</li>
+<li>expertise.</li>
+</ul>
+<hr>
+<h2 id="2-capital-structurel">2. Capital structurel </h2>
+<p>Connaissances appartenant à l'organisation.</p>
+<p>Exemples :</p>
+<ul>
+<li>procédures ;</li>
+<li>bases de connaissances ;</li>
+<li>brevets ;</li>
+<li>logiciels.</li>
+</ul>
+<hr>
+<h2 id="3-capital-relationnel">3. Capital relationnel </h2>
+<p>Valeur des relations externes.</p>
+<p>Exemples :</p>
+<ul>
+<li>clients ;</li>
+<li>partenaires ;</li>
+<li>fournisseurs ;</li>
+<li>réputation.</li>
+</ul>
+<hr>
+<h1 id="6-knowledge-management-system-kms">6. KNOWLEDGE MANAGEMENT SYSTEM (KMS) </h1>
+<h2 id="définition-2">Définition </h2>
+<p>Système permettant de gérer la connaissance d'une organisation.</p>
+<hr>
+<h2 id="objectifs">Objectifs </h2>
+<ul>
+<li>centraliser les connaissances ;</li>
+<li>favoriser le partage ;</li>
+<li>éviter les pertes de savoir ;</li>
+<li>améliorer les décisions.</li>
+</ul>
+<hr>
+<h2 id="composants-dun-kms">Composants d'un KMS </h2>
+<h3 id="gestion-documentaire">Gestion documentaire </h3>
+<p>Exemples :</p>
+<ul>
+<li>SharePoint</li>
+<li>Alfresco</li>
+<li>Confluence</li>
+</ul>
+<hr>
+<h3 id="base-de-connaissances">Base de connaissances </h3>
+<p>Contient :</p>
+<ul>
+<li>FAQ ;</li>
+<li>guides ;</li>
+<li>retours d'expérience ;</li>
+<li>procédures.</li>
+</ul>
+<hr>
+<h3 id="moteur-de-recherche">Moteur de recherche </h3>
+<p>Permet de retrouver rapidement :</p>
+<ul>
+<li>documents ;</li>
+<li>experts ;</li>
+<li>projets similaires.</li>
+</ul>
+<hr>
+<h3 id="collaboration">Collaboration </h3>
+<p>Exemples :</p>
+<ul>
+<li>Wiki</li>
+<li>Teams</li>
+<li>Slack</li>
+<li>Notion</li>
+</ul>
+<hr>
+<h1 id="7-km-framework">7. KM FRAMEWORK </h1>
+<p>Cycle classique du Knowledge Management.</p>
+<hr>
+<h2 id="1-création--acquisition">1. Création / Acquisition </h2>
+<p>Obtention des connaissances.</p>
+<p>Sources :</p>
+<ul>
+<li>experts ;</li>
+<li>documents ;</li>
+<li>enquêtes ;</li>
+<li>retours d'expérience.</li>
+</ul>
+<hr>
+<h2 id="2-stockage">2. Stockage </h2>
+<p>Organisation de la connaissance.</p>
+<p>Exemples :</p>
+<ul>
+<li>base documentaire ;</li>
+<li>GED ;</li>
+<li>ontologies.</li>
+</ul>
+<hr>
+<h2 id="3-partage">3. Partage </h2>
+<p>Diffusion de la connaissance.</p>
+<p>Exemples :</p>
+<ul>
+<li>formations ;</li>
+<li>wiki ;</li>
+<li>communautés de pratique.</li>
+</ul>
+<hr>
+<h2 id="4-utilisation">4. Utilisation </h2>
+<p>Application dans les activités métiers.</p>
+<p>Exemples :</p>
+<ul>
+<li>aide à la décision ;</li>
+<li>automatisation ;</li>
+<li>résolution de problèmes.</li>
+</ul>
+<hr>
+<h2 id="5-évaluation--capitalisation">5. Évaluation / Capitalisation </h2>
+<p>Mesure de l'efficacité.</p>
+<p>Indicateurs :</p>
+<ul>
+<li>satisfaction ;</li>
+<li>réutilisation ;</li>
+<li>temps gagné ;</li>
+<li>nombre de contributions.</li>
+</ul>
+<hr>
+<h1 id="8-web-sémantique">8. WEB SÉMANTIQUE </h1>
+<h2 id="définition-3">Définition </h2>
+<p>Vision proposée par Tim Berners-Lee.</p>
+<p>Objectif :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Permettre aux machines
+de comprendre les données du Web.
+</code></pre><hr>
+<h2 id="objectifs-1">Objectifs </h2>
+<ul>
+<li>interopérabilité ;</li>
+<li>partage de données ;</li>
+<li>automatisation ;</li>
+<li>raisonnement.</li>
+</ul>
+<hr>
+<h1 id="9-architecture-du-web-sémantique">9. ARCHITECTURE DU WEB SÉMANTIQUE </h1>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Trust
+
+Proof
+
+Logic
+
+Ontology (OWL)
+
+RDF Schema
+
+RDF
+
+XML
+
+URI / Unicode
+</code></pre><hr>
+<h2 id="uri">URI </h2>
+<p>Uniform Resource Identifier.</p>
+<p>Permet d'identifier une ressource de manière unique.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>http://example.org/person/arnaud
+</code></pre><hr>
+<h1 id="10-rdf-resource-description-framework">10. RDF (RESOURCE DESCRIPTION FRAMEWORK) </h1>
+<h2 id="définition-4">Définition </h2>
+<p>Modèle de représentation des connaissances.</p>
+<hr>
+<h2 id="principe">Principe </h2>
+<p>RDF représente tout sous forme de triplets.</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Sujet - Prédicat - Objet
+</code></pre><hr>
+<h2 id="exemple">Exemple </h2>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Arnaud  aime  LaJoconde
+</code></pre><p>Sujet :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Arnaud
+</code></pre><p>Prédicat :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>aime
+</code></pre><p>Objet :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>LaJoconde
+</code></pre><hr>
+<h2 id="graphe-rdf">Graphe RDF </h2>
+<p>Chaque triplet devient :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Noeud → Relation → Noeud
+</code></pre><p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Arnaud ----aime----&gt; LaJoconde
+</code></pre><hr>
+<h1 id="11-rdfxml">11. RDF/XML </h1>
+<h2 id="définition-5">Définition </h2>
+<p>Syntaxe XML permettant d'écrire du RDF.</p>
+<hr>
+<h2 id="exemple-1">Exemple </h2>
+<pre data-role="codeBlock" data-info="xml" class="language-xml xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">rdf:</span>Description</span> <span class="token attr-name"><span class="token namespace">rdf:</span>about</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Arnaud<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">ex:</span>aime</span> <span class="token attr-name"><span class="token namespace">rdf:</span>resource</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>LaJoconde<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">rdf:</span>Description</span><span class="token punctuation">&gt;</span></span>
+</code></pre><hr>
+<h1 id="12-rdf-schema-rdfs">12. RDF SCHEMA (RDFS) </h1>
+<p>Permet d'ajouter :</p>
+<ul>
+<li>classes ;</li>
+<li>hiérarchies ;</li>
+<li>propriétés.</li>
+</ul>
+<hr>
+<h2 id="classe">Classe </h2>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Personne
+</code></pre><hr>
+<h2 id="sous-classe">Sous-classe </h2>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Etudiant
+      ⬇
+Personne
+</code></pre><p>En RDF :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Etudiant rdfs:subClassOf Personne
+</code></pre><hr>
+<h2 id="inférence">Inférence </h2>
+<p>Si :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Paul rdf:type Etudiant
+</code></pre><p>et</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Etudiant rdfs:subClassOf Personne
+</code></pre><p>alors :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Paul rdf:type Personne
+</code></pre><hr>
+<h1 id="13-ontologies">13. ONTOLOGIES </h1>
+<h2 id="définition-6">Définition </h2>
+<p>Description formelle d'un domaine.</p>
+<p>Une ontologie décrit :</p>
+<ul>
+<li>les concepts ;</li>
+<li>les relations ;</li>
+<li>les contraintes ;</li>
+<li>les règles.</li>
+</ul>
+<hr>
+<h2 id="exemple-clinique">Exemple clinique </h2>
+<p>Classes :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Patient
+Médecin
+Médicament
+Consultation
+</code></pre><hr>
+<h2 id="individus">Individus </h2>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>JohnDoe
+DrSmith
+Ibuprofene
+</code></pre><hr>
+<h2 id="propriétés">Propriétés </h2>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>consulte
+prescrit
+travailleDans
+</code></pre><hr>
+<h1 id="14-owl-web-ontology-language">14. OWL (WEB ONTOLOGY LANGUAGE) </h1>
+<h2 id="définition-7">Définition </h2>
+<p>Langage permettant de construire des ontologies riches.</p>
+<p>Plus puissant que RDF et RDFS.</p>
+<hr>
+<h2 id="owlclass">owl:Class </h2>
+<p>Déclaration d'une classe.</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Médecin
+Patient
+</code></pre><hr>
+<h2 id="owlequivalentclass">owl:equivalentClass </h2>
+<p>Deux classes sont identiques.</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Cardiologue ≡ MédecinCardiaque
+</code></pre><hr>
+<h2 id="owldisjointwith">owl:disjointWith </h2>
+<p>Deux classes incompatibles.</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Patient disjointWith Médicament
+</code></pre><p>Un individu ne peut pas appartenir aux deux.</p>
+<hr>
+<h1 id="15-restrictions-owl">15. RESTRICTIONS OWL </h1>
+<h2 id="restriction-dexistence">Restriction d'existence </h2>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Patient
+   doit avoir
+au moins un médecin
+</code></pre><p>Notation :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Patient
+⊑ consulte some Médecin
+</code></pre><hr>
+<h2 id="restriction-de-cardinalité">Restriction de cardinalité </h2>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Personne possède exactement 1 date de naissance.
+</code></pre><hr>
+<h1 id="16-reasoning-raisonnement">16. REASONING (RAISONNEMENT) </h1>
+<h2 id="définition-8">Définition </h2>
+<p>Déduction automatique de nouvelles connaissances.</p>
+<hr>
+<h2 id="exemple-2">Exemple </h2>
+<p>Si :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Cardiologue
+    sous-classe de
+Médecin
+</code></pre><p>et :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>DrSmith est Cardiologue
+</code></pre><p>alors :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>DrSmith est Médecin
+</code></pre><hr>
+<h1 id="17-sparql">17. SPARQL </h1>
+<h2 id="définition-9">Définition </h2>
+<p>Langage de requête du Web sémantique.</p>
+<p>Equivalent du SQL pour RDF.</p>
+<hr>
+<h2 id="structure">Structure </h2>
+<pre data-role="codeBlock" data-info="sparql" class="language-sparql sparql"><code><span class="token keyword keyword-SELECT">SELECT</span> <span class="token variable">?x</span>
+<span class="token keyword keyword-WHERE">WHERE</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre><hr>
+<h2 id="exemple-1">Exemple 1 </h2>
+<p>Lister tous les étudiants.</p>
+<pre data-role="codeBlock" data-info="sparql" class="language-sparql sparql"><code><span class="token keyword keyword-SELECT">SELECT</span> <span class="token variable">?x</span>
+<span class="token keyword keyword-WHERE">WHERE</span> <span class="token punctuation">{</span>
+   <span class="token variable">?x</span> <span class="token function"><span class="token prefix">rdf<span class="token punctuation">:</span></span><span class="token local-name">type</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">Etudiant</span></span>
+<span class="token punctuation">}</span>
+</code></pre><hr>
+<h2 id="exemple-2">Exemple 2 </h2>
+<p>Trouver les salles réservées.</p>
+<pre data-role="codeBlock" data-info="sparql" class="language-sparql sparql"><code><span class="token keyword keyword-SELECT">SELECT</span> <span class="token variable">?salle</span>
+<span class="token keyword keyword-WHERE">WHERE</span> <span class="token punctuation">{</span>
+   <span class="token variable">?reservation</span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">concerneSalle</span></span> <span class="token variable">?salle</span>
+<span class="token punctuation">}</span>
+</code></pre><hr>
+<h2 id="filter">FILTER </h2>
+<p>Filtrer les résultats.</p>
+<pre data-role="codeBlock" data-info="sparql" class="language-sparql sparql"><code><span class="token keyword keyword-FILTER">FILTER</span><span class="token punctuation">(</span><span class="token variable">?age</span> &gt; <span class="token number">18</span><span class="token punctuation">)</span>
+</code></pre><hr>
+<h2 id="limit">LIMIT </h2>
+<p>Limiter les résultats.</p>
+<pre data-role="codeBlock" data-info="sparql" class="language-sparql sparql"><code><span class="token keyword keyword-LIMIT">LIMIT</span> <span class="token number">10</span>
+</code></pre><hr>
+<h2 id="insert-data">INSERT DATA </h2>
+<p>Ajouter des triplets.</p>
+<pre data-role="codeBlock" data-info="sparql" class="language-sparql sparql"><code><span class="token keyword keyword-INSERT">INSERT</span> <span class="token keyword keyword-DATA">DATA</span> <span class="token punctuation">{</span>
+   <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">Paul</span></span> <span class="token function"><span class="token prefix">rdf<span class="token punctuation">:</span></span><span class="token local-name">type</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">Etudiant</span></span>
+<span class="token punctuation">}</span>
+</code></pre><hr>
+<h1 id="18-rdf-vs-rdfs-vs-owl">18. RDF VS RDFS VS OWL </h1>
+<table>
+<thead>
+<tr>
+<th>Technologie</th>
+<th>Rôle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RDF</td>
+<td>Représentation des triplets</td>
+</tr>
+<tr>
+<td>RDFS</td>
+<td>Classes et hiérarchies</td>
+</tr>
+<tr>
+<td>OWL</td>
+<td>Raisonnement avancé et contraintes</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="19-questions-dexamen-classiques">19. QUESTIONS D'EXAMEN CLASSIQUES </h1>
+<h2 id="différence-entre-donnée-information-et-connaissance-">Différence entre donnée, information et connaissance ? </h2>
+<p>Réponse :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Donnée = fait brut
+
+Information = donnée contextualisée
+
+Connaissance = information comprise
+et exploitable
+</code></pre><hr>
+<h2 id="différence-entre-connaissance-tacite-et-explicite-">Différence entre connaissance tacite et explicite ? </h2>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Tacite :
+dans la tête des experts
+
+Explicite :
+documentée et partageable
+</code></pre><hr>
+<h2 id="pourquoi-utiliser-un-kms-">Pourquoi utiliser un KMS ? </h2>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Conserver les connaissances
+
+Favoriser le partage
+
+Réduire les pertes de savoir
+
+Améliorer les décisions
+</code></pre><hr>
+<h2 id="pourquoi-owl-est-plus-puissant-que-rdf-">Pourquoi OWL est plus puissant que RDF ? </h2>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>OWL permet :
+
+- restrictions
+- équivalences
+- disjonctions
+- inférences
+</code></pre><hr>
+<h2 id="à-retenir-absolument-pour-lexamen">À retenir absolument pour l'examen </h2>
+<h3 id="km">KM </h3>
+<ul>
+<li>DIKW</li>
+<li>Tacite vs Explicite</li>
+<li>SECI</li>
+<li>Capital intellectuel</li>
+<li>KMS</li>
+<li>KM Framework</li>
+</ul>
+<h3 id="web-sémantique">Web Sémantique </h3>
+<ul>
+<li>URI</li>
+<li>RDF</li>
+<li>RDF/XML</li>
+<li>RDF Graph</li>
+<li>RDFS</li>
+<li>OWL</li>
+<li>SPARQL</li>
+</ul>
+<h3 id="ontologies">Ontologies </h3>
+<ul>
+<li>Classe</li>
+<li>Individu</li>
+<li>Propriété</li>
+<li>Restriction</li>
+<li>Inférence</li>
+<li>Reasoning</li>
+</ul>
+<h3 id="requêtes-sparql-à-savoir-écrire">Requêtes SPARQL à savoir écrire </h3>
+<ul>
+<li>SELECT</li>
+<li>WHERE</li>
+<li>FILTER</li>
+<li>LIMIT</li>
+<li>INSERT DATA</li>
+</ul>
+<h3 id="triplet-rdf">Triplet RDF </h3>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Sujet
+  ↓
+Prédicat
+  ↓
+Objet
+</code></pre><p>C'est la notion la plus importante de toute la partie Web Sémantique.</p>
+<h1 id="20-corrigé-complet-des-qcm-français--anglais">20. CORRIGÉ COMPLET DES QCM (FRANÇAIS + ANGLAIS) </h1>
+<p>Cette section regroupe l'ensemble des questions apparues dans les deux examens. Les doublons ont été fusionnés afin de constituer une base de révision unique couvrant l'intégralité du programme.</p>
+<hr>
+<h1 id="q1-quel-est-lobjectif-principal-du-web-sémantique-">Q1. Quel est l'objectif principal du Web Sémantique ? </h1>
+<h3 id="réponse">Réponse </h3>
+<p>✅ Permettre aux machines de comprendre et traiter les données du Web.</p>
+<h3 id="explication">Explication </h3>
+<p>Le Web traditionnel permet aux humains de lire les informations.</p>
+<p>Le Web Sémantique ajoute :</p>
+<ul>
+<li>du sens ;</li>
+<li>des relations ;</li>
+<li>une structure formelle.</li>
+</ul>
+<p>afin que les machines puissent également comprendre les données.</p>
+<hr>
+<h1 id="q2-quelle-est-la-couche-la-plus-basse-de-larchitecture-du-web-sémantique-">Q2. Quelle est la couche la plus basse de l'architecture du Web Sémantique ? </h1>
+<h3 id="réponse-1">Réponse </h3>
+<p>✅ URI / Unicode</p>
+<h3 id="explication-1">Explication </h3>
+<p>Toutes les autres couches reposent sur l'identification unique des ressources.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>http://example.org/person/arnaud
+</code></pre><p>Sans URI, impossible d'identifier précisément les ressources.</p>
+<hr>
+<h1 id="q3-quel-langage-est-utilisé-pour-représenter-les-connaissances-du-web-sémantique-">Q3. Quel langage est utilisé pour représenter les connaissances du Web Sémantique ? </h1>
+<h3 id="réponse-2">Réponse </h3>
+<p>✅ RDF</p>
+<h3 id="explication-2">Explication </h3>
+<p>RDF est le modèle fondamental de représentation.</p>
+<p>Toutes les informations sont exprimées sous forme de :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Sujet - Prédicat - Objet
+</code></pre><hr>
+<h1 id="q4-quelle-technologie-permet-de-représenter-les-relations-entre-concepts-">Q4. Quelle technologie permet de représenter les relations entre concepts ? </h1>
+<h3 id="réponse-3">Réponse </h3>
+<p>✅ OWL</p>
+<h3 id="explication-3">Explication </h3>
+<p>OWL permet :</p>
+<ul>
+<li>d'exprimer des relations ;</li>
+<li>de créer des contraintes ;</li>
+<li>de faire des inférences.</li>
+</ul>
+<p>C'est le langage d'ontologie du Web Sémantique.</p>
+<hr>
+<h1 id="q5-quelle-organisation-normalise-le-web-sémantique-">Q5. Quelle organisation normalise le Web Sémantique ? </h1>
+<h3 id="réponse-4">Réponse </h3>
+<p>✅ W3C</p>
+<h3 id="explication-4">Explication </h3>
+<p>Le World Wide Web Consortium est responsable des standards :</p>
+<ul>
+<li>RDF</li>
+<li>RDFS</li>
+<li>OWL</li>
+<li>SPARQL</li>
+</ul>
+<hr>
+<h1 id="q6-quel-est-un-avantage-majeur-du-web-sémantique-">Q6. Quel est un avantage majeur du Web Sémantique ? </h1>
+<h3 id="réponse-5">Réponse </h3>
+<p>✅ Interopérabilité des données</p>
+<h3 id="explication-5">Explication </h3>
+<p>Des systèmes différents peuvent partager leurs données grâce à des modèles communs.</p>
+<hr>
+<h1 id="q7-quest-ce-quune-ontologie-">Q7. Qu'est-ce qu'une ontologie ? </h1>
+<h3 id="réponse-6">Réponse </h3>
+<p>✅ Une description formelle d'un domaine.</p>
+<h3 id="explication-6">Explication </h3>
+<p>Une ontologie décrit :</p>
+<ul>
+<li>les concepts ;</li>
+<li>les propriétés ;</li>
+<li>les relations ;</li>
+<li>les contraintes.</li>
+</ul>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Patient
+Médecin
+Consultation
+Médicament
+</code></pre><hr>
+<h1 id="q8-quels-sont-les-composants-dun-triplet-rdf-">Q8. Quels sont les composants d'un triplet RDF ? </h1>
+<h3 id="réponse-7">Réponse </h3>
+<p>✅ Sujet<br>
+✅ Prédicat<br>
+✅ Objet</p>
+<h3 id="explication-7">Explication </h3>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Arnaud aime LaJoconde
+</code></pre><p>Sujet :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Arnaud
+</code></pre><p>Prédicat :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>aime
+</code></pre><p>Objet :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>LaJoconde
+</code></pre><hr>
+<h1 id="q9-quelle-syntaxe-permet-décrire-du-rdf-">Q9. Quelle syntaxe permet d'écrire du RDF ? </h1>
+<h3 id="réponse-8">Réponse </h3>
+<p>✅ Turtle<br>
+✅ RDF/XML</p>
+<h3 id="explication-8">Explication </h3>
+<p>RDF est un modèle.</p>
+<p>Il existe plusieurs syntaxes :</p>
+<ul>
+<li>RDF/XML</li>
+<li>Turtle</li>
+<li>N-Triples</li>
+<li>JSON-LD</li>
+</ul>
+<hr>
+<h1 id="q10-quel-est-le-rôle-dun-uri-">Q10. Quel est le rôle d'un URI ? </h1>
+<h3 id="réponse-9">Réponse </h3>
+<p>✅ Identifier une ressource de manière unique.</p>
+<h3 id="explication-9">Explication </h3>
+<p>Un URI joue le même rôle qu'une clé primaire.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>http://example.org/person/123
+</code></pre><hr>
+<h1 id="q11-rdf-est-">Q11. RDF est : </h1>
+<h3 id="réponse-10">Réponse </h3>
+<p>✅ Un modèle de données</p>
+<h3 id="explication-10">Explication </h3>
+<p>RDF n'est :</p>
+<ul>
+<li>ni une base de données ;</li>
+<li>ni un protocole ;</li>
+<li>ni un langage de requête.</li>
+</ul>
+<p>C'est un modèle de représentation.</p>
+<hr>
+<h1 id="q12-dans-rdf-une-ressource-est-">Q12. Dans RDF, une ressource est : </h1>
+<h3 id="réponse-11">Réponse </h3>
+<p>✅ Toute chose pouvant être identifiée par un URI.</p>
+<h3 id="explication-11">Explication </h3>
+<p>Une ressource peut être :</p>
+<ul>
+<li>une personne ;</li>
+<li>un bâtiment ;</li>
+<li>un document ;</li>
+<li>un médicament ;</li>
+<li>une ville.</li>
+</ul>
+<hr>
+<h1 id="q13-quel-est-le-rôle-du-prédicat-">Q13. Quel est le rôle du prédicat ? </h1>
+<h3 id="réponse-12">Réponse </h3>
+<p>✅ Décrire la relation entre sujet et objet.</p>
+<h3 id="explication-12">Explication </h3>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Paul ----aime----&gt; Musique
+</code></pre><p>"aime" est le prédicat.</p>
+<hr>
+<h1 id="q14-sparql-est-utilisé-pour-">Q14. SPARQL est utilisé pour : </h1>
+<h3 id="réponse-13">Réponse </h3>
+<p>✅ Interroger des graphes RDF.</p>
+<h3 id="explication-13">Explication </h3>
+<p>SPARQL joue le même rôle que SQL pour les bases relationnelles.</p>
+<hr>
+<h1 id="q15-la-clause-where-sert-à-">Q15. La clause WHERE sert à : </h1>
+<h3 id="réponse-14">Réponse </h3>
+<p>✅ Définir le motif de recherche.</p>
+<h3 id="explication-14">Explication </h3>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="sparql" class="language-sparql sparql"><code><span class="token keyword keyword-SELECT">SELECT</span> <span class="token variable">?x</span>
+<span class="token keyword keyword-WHERE">WHERE</span> <span class="token punctuation">{</span>
+ <span class="token variable">?x</span> <span class="token function"><span class="token prefix">rdf<span class="token punctuation">:</span></span><span class="token local-name">type</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">Person</span></span>
+<span class="token punctuation">}</span>
+</code></pre><hr>
+<h1 id="q16-que-signifie-la-requête-suivante-">Q16. Que signifie la requête suivante ? </h1>
+<pre data-role="codeBlock" data-info="sparql" class="language-sparql sparql"><code><span class="token keyword keyword-SELECT">SELECT</span> <span class="token variable">?x</span>
+<span class="token keyword keyword-WHERE">WHERE</span> <span class="token punctuation">{</span>
+ <span class="token variable">?x</span> <span class="token function"><span class="token prefix">rdf<span class="token punctuation">:</span></span><span class="token local-name">type</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">Person</span></span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="réponse-15">Réponse </h3>
+<p>✅ Sélectionne toutes les ressources de type Person.</p>
+<h3 id="explication-15">Explication </h3>
+<p>Le motif :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>?x rdf:type ex:Person
+</code></pre><p>cherche tous les individus appartenant à la classe Person.</p>
+<hr>
+<h1 id="q17-quelle-clause-limite-les-résultats-">Q17. Quelle clause limite les résultats ? </h1>
+<h3 id="réponse-16">Réponse </h3>
+<p>✅ LIMIT</p>
+<h3 id="explication-16">Explication </h3>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="sparql" class="language-sparql sparql"><code><span class="token keyword keyword-LIMIT">LIMIT</span> <span class="token number">10</span>
+</code></pre><p>Retourne uniquement les 10 premiers résultats.</p>
+<hr>
+<h1 id="q18-sparql-interroge-">Q18. SPARQL interroge : </h1>
+<h3 id="réponse-17">Réponse </h3>
+<p>✅ Un graphe RDF</p>
+<h3 id="explication-17">Explication </h3>
+<p>SPARQL n'est pas destiné aux bases relationnelles.</p>
+<p>Il manipule des triplets RDF.</p>
+<hr>
+<h1 id="q19-quelle-instruction-ajoute-des-données-rdf-">Q19. Quelle instruction ajoute des données RDF ? </h1>
+<h3 id="réponse-18">Réponse </h3>
+<p>✅ INSERT DATA</p>
+<h3 id="explication-18">Explication </h3>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="sparql" class="language-sparql sparql"><code><span class="token keyword keyword-INSERT">INSERT</span> <span class="token keyword keyword-DATA">DATA</span> <span class="token punctuation">{</span>
+ <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">Paul</span></span> <span class="token function"><span class="token prefix">rdf<span class="token punctuation">:</span></span><span class="token local-name">type</span></span> <span class="token function"><span class="token prefix">ex<span class="token punctuation">:</span></span><span class="token local-name">Etudiant</span></span>
+<span class="token punctuation">}</span>
+</code></pre><hr>
+<h1 id="q20-owl-est-utilisé-pour-">Q20. OWL est utilisé pour : </h1>
+<h3 id="réponse-19">Réponse </h3>
+<p>✅ Décrire des ontologies riches et complexes.</p>
+<h3 id="explication-19">Explication </h3>
+<p>OWL apporte :</p>
+<ul>
+<li>les restrictions ;</li>
+<li>les équivalences ;</li>
+<li>les inférences ;</li>
+<li>les cardinalités.</li>
+</ul>
+<hr>
+<h1 id="q21-différence-entre-rdfclass-et-owlclass-">Q21. Différence entre rdf:Class et owl:Class ? </h1>
+<h3 id="réponse-20">Réponse </h3>
+<p>✅ owl:Class permet des raisonnements plus riches.</p>
+<h3 id="explication-20">Explication </h3>
+<p>OWL ajoute des mécanismes absents de RDF :</p>
+<ul>
+<li>disjonction ;</li>
+<li>cardinalité ;</li>
+<li>équivalence ;</li>
+<li>raisonnement automatique.</li>
+</ul>
+<hr>
+<h1 id="q22-quel-est-le-rôle-de-owlequivalentclass-">Q22. Quel est le rôle de owl:equivalentClass ? </h1>
+<h3 id="réponse-21">Réponse </h3>
+<p>✅ Déclarer deux classes équivalentes.</p>
+<h3 id="explication-21">Explication </h3>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Cardiologue ≡ MédecinCardiaque
+</code></pre><hr>
+<h1 id="q23-que-permet-le-raisonnement-owl-">Q23. Que permet le raisonnement OWL ? </h1>
+<h3 id="réponse-22">Réponse </h3>
+<p>✅ Inférer de nouvelles connaissances.</p>
+<h3 id="explication-22">Explication </h3>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Cardiologue ⊆ Médecin
+</code></pre><p>et</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>DrSmith est Cardiologue
+</code></pre><p>permettent de déduire :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>DrSmith est Médecin
+</code></pre><hr>
+<h1 id="q24-quel-est-le-rôle-de-owldisjointwith-">Q24. Quel est le rôle de owl:disjointWith ? </h1>
+<h3 id="réponse-23">Réponse </h3>
+<p>✅ Déclarer deux classes incompatibles.</p>
+<h3 id="explication-23">Explication </h3>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Patient disjointWith Médicament
+</code></pre><p>Un individu ne peut pas être les deux simultanément.</p>
+<hr>
+<h1 id="q25-quel-format-peut-représenter-une-ontologie-owl-">Q25. Quel format peut représenter une ontologie OWL ? </h1>
+<h3 id="réponse-24">Réponse </h3>
+<p>✅ RDF/XML</p>
+<h3 id="explication-24">Explication </h3>
+<p>OWL est souvent sérialisé en RDF/XML.</p>
+<hr>
+<h1 id="q26-quel-est-le-but-du-knowledge-management-">Q26. Quel est le but du Knowledge Management ? </h1>
+<h3 id="réponse-25">Réponse </h3>
+<p>✅ Capturer, structurer et diffuser les connaissances.</p>
+<h3 id="explication-25">Explication </h3>
+<p>Le KM vise à préserver et valoriser le savoir de l'organisation.</p>
+<hr>
+<h1 id="q27-le-capital-intellectuel-comprend-">Q27. Le capital intellectuel comprend : </h1>
+<h3 id="réponse-26">Réponse </h3>
+<p>✅ Capital humain<br>
+✅ Capital structurel<br>
+✅ Capital relationnel</p>
+<h3 id="explication-26">Explication </h3>
+<p>Capital humain :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Compétences
+</code></pre><p>Capital structurel :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Procédures
+</code></pre><p>Capital relationnel :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Clients et partenaires
+</code></pre><hr>
+<h1 id="q28-comment-externaliser-une-connaissance-tacite-">Q28. Comment externaliser une connaissance tacite ? </h1>
+<h3 id="réponse-27">Réponse </h3>
+<p>✅ Cartographie cognitive (Mind Mapping)</p>
+<h3 id="explication-27">Explication </h3>
+<p>La cartographie cognitive permet de formaliser les connaissances détenues par les experts.</p>
+<hr>
+<h1 id="q29-quelle-est-la-différence-entre-donnée-information-et-connaissance-">Q29. Quelle est la différence entre donnée, information et connaissance ? </h1>
+<h3 id="réponse-28">Réponse </h3>
+<p>✅ Le niveau de traitement sémantique.</p>
+<h3 id="explication-28">Explication </h3>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Donnée
+↓
+Information
+↓
+Connaissance
+↓
+Sagesse
+</code></pre><p>Plus on monte, plus le contexte et l'interprétation augmentent.</p>
+<hr>
+<h1 id="q30-quel-est-lobjectif-dun-kms-">Q30. Quel est l'objectif d'un KMS ? </h1>
+<h3 id="réponse-29">Réponse </h3>
+<p>✅ Favoriser l'innovation, la collaboration et la mémoire organisationnelle.</p>
+<h3 id="explication-29">Explication </h3>
+<p>Un KMS doit :</p>
+<ul>
+<li>stocker ;</li>
+<li>partager ;</li>
+<li>retrouver ;</li>
+<li>réutiliser</li>
+</ul>
+<p>les connaissances de l'organisation.</p>
+<hr>
+<h1 id="q31-quelles-technologies-sont-fondatrices-du-web-sémantique-">Q31. Quelles technologies sont fondatrices du Web Sémantique ? </h1>
+<h3 id="réponse-30">Réponse </h3>
+<p>✅ RDF<br>
+✅ OWL<br>
+✅ SPARQL</p>
+<h3 id="explication-30">Explication </h3>
+<p>RDF représente.</p>
+<p>OWL raisonne.</p>
+<p>SPARQL interroge.</p>
+<p>Les trois forment le cœur du Web Sémantique.</p>
+<hr>
+<h1 id="q32-quels-sont-les-bénéfices-des-ontologies-">Q32. Quels sont les bénéfices des ontologies ? </h1>
+<h3 id="réponse-31">Réponse </h3>
+<p>✅ Interopérabilité<br>
+✅ Compréhension commune des concepts</p>
+<h3 id="explication-31">Explication </h3>
+<p>Les ontologies permettent à plusieurs systèmes d'utiliser le même vocabulaire métier.</p>
+<hr>
+<h1 id="q33-quelles-affirmations-sont-vraies-concernant-rdf-">Q33. Quelles affirmations sont vraies concernant RDF ? </h1>
+<h3 id="réponse-32">Réponse </h3>
+<p>✅ RDF représente des triplets.</p>
+<h3 id="attention">Attention </h3>
+<p>La proposition :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>RDF est basé sur XML
+</code></pre><p>est FAUSSE.</p>
+<p>RDF n'est pas basé sur XML.</p>
+<p>RDF/XML n'est qu'une syntaxe parmi plusieurs.</p>
+<hr>
+<h1 id="q34-cas-dusage-du-web-sémantique">Q34. Cas d'usage du Web Sémantique </h1>
+<h3 id="réponses">Réponses </h3>
+<p>✅ Intégration de données<br>
+✅ Représentation décentralisée de connaissances</p>
+<h3 id="explication-32">Explication </h3>
+<p>Le Web Sémantique permet de connecter des connaissances provenant de systèmes différents.</p>
+<hr>
+<h1 id="q35-que-peut-retourner-sparql-">Q35. Que peut retourner SPARQL ? </h1>
+<h3 id="réponses-1">Réponses </h3>
+<p>✅ Liste de triplets RDF<br>
+✅ Résultats en XML<br>
+✅ Résultats en JSON<br>
+✅ Résultats en CSV</p>
+<h3 id="explication-33">Explication </h3>
+<p>SPARQL peut retourner plusieurs formats de sérialisation.</p>
+<hr>
+<h1 id="mémoire-express-examen">MÉMOIRE EXPRESS EXAMEN </h1>
+<p>À retenir absolument :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>RDF = Représentation
+
+RDFS = Hiérarchie
+
+OWL = Raisonnement
+
+SPARQL = Requêtes
+
+URI = Identifiants
+
+KMS = Gestion des connaissances
+
+DIKW = Data → Information → Knowledge → Wisdom
+
+SECI = Socialisation → Externalisation →
+       Combinaison → Internalisation
+
+Capital intellectuel =
+    Humain + Structurel + Relationnel
+</code></pre>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
