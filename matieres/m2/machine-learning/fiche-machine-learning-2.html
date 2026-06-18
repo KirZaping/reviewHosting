@@ -1,0 +1,610 @@
+<!DOCTYPE html><html><head>
+      <title>Machine learning 2</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\wandr\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.30\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-details{margin:0;padding:0;border:none}.markdown-preview .md-toc summary.md-toc-link-wrapper{cursor:pointer;list-style-position:outside}.markdown-preview .md-toc summary.md-toc-link-wrapper::marker{font-size:.85em}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='0']{margin-left:12px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='1']{margin-left:28px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='2']{margin-left:44px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='3']{margin-left:60px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='4']{margin-left:76px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='5']{margin-left:80px}.markdown-preview a.tag,.markdown-preview a.tag:active,.markdown-preview a.tag:link,.markdown-preview a.tag:visited,.markdown-preview span.tag:not(.token){display:inline-block;background-color:var(--vscode-badge-background,rgba(127,127,127,.18));color:var(--vscode-badge-foreground,currentColor);border-radius:2em;font-size:.85em;font-weight:500;padding:.05em .55em;line-height:1.5;white-space:nowrap;text-decoration:none;text-shadow:none;box-shadow:none;transition:background-color .12s ease,opacity .12s ease}.markdown-preview a.tag{cursor:pointer}.markdown-preview a.tag:focus,.markdown-preview a.tag:hover{background-color:var(--vscode-badge-background,rgba(127,127,127,.32));color:var(--vscode-badge-foreground,currentColor);opacity:.85;text-decoration:none;outline:0}.markdown-preview .wikilink-embed-content{border-left:3px solid var(--vscode-textBlockQuote-border,rgba(128,128,128,.3));background:var(--vscode-textBlockQuote-background,rgba(128,128,128,.05));margin:.5em 0;padding:.5em .75em;border-radius:0 3px 3px 0}.markdown-preview .wikilink-embed-content.wikilink-embed-error{border-left-color:var(--vscode-errorForeground,#cf222e);color:var(--vscode-errorForeground,#cf222e);font-style:italic;opacity:.8}.markdown-preview .wikilink-embed-content h1:first-child,.markdown-preview .wikilink-embed-content h2:first-child,.markdown-preview .wikilink-embed-content h3:first-child,.markdown-preview .wikilink-embed-content h4:first-child,.markdown-preview .wikilink-embed-content h5:first-child,.markdown-preview .wikilink-embed-content h6:first-child{margin-top:.25em}.markdown-preview .wikilink-embed-content .wikilink-embed-content{margin:.25em 0;padding:.25em .5em}.markdown-preview .block-id{display:none}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:var(--vscode-scrollbarSlider-background,rgba(150,150,150,.66));border:4px solid var(--vscode-scrollbarSlider-background,rgba(150,150,150,.66));background-clip:content-box}.scrollbar-style::-webkit-scrollbar-thumb:hover{background-color:var(--vscode-scrollbarSlider-hoverBackground,rgba(120,120,120,.66))}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:var(--vscode-scrollbarSlider-background,rgba(150,150,150,.66));border:4px solid var(--vscode-scrollbarSlider-background,rgba(150,150,150,.66));background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb:hover{background-color:var(--vscode-scrollbarSlider-hoverBackground,rgba(120,120,120,.66))}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-details{margin:0;padding:0;border:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='0']{padding-left:0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='1']{padding-left:16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='2']{padding-left:32px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='3']{padding-left:48px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='4']{padding-left:64px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='5']{padding-left:80px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. -->
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+    </head>
+    <body for="html-export">
+      <p style="max-width:914px;margin:1rem auto 0;padding:0 2rem;"><a href="index.html">&larr; Retour &agrave; la mati&egrave;re</a></p>
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="fiche-de-révision--lab-3--decision-trees--regression">Fiche de révision — Lab 3 : Decision Trees &amp; Regression </h1>
+<p>Le Lab 3 introduit deux grands blocs : les <strong>arbres de décision</strong> pour la classification, puis la <strong>régression</strong> avec comparaison entre <strong>KNN Regressor</strong> et <strong>Decision Tree Regressor</strong>. Il s’appuie sur les notions précédentes : préparation des données, train/test split, encodage, scaling et évaluation des modèles.</p>
+<hr>
+<h2 id="1-objectif-du-lab-3">1. Objectif du Lab 3 </h2>
+<p>Le Lab 3 sert à comprendre comment entraîner, tester et comparer des modèles supervisés.</p>
+<p>Il contient deux parties :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Partie 1 : principe des arbres de décision
+Partie 2 : régression pour prédire le prix d’une maison
+</code></pre><p>La partie 1 utilise le dataset <strong>Iris</strong> pour faire de la classification.<br>
+La partie 2 utilise un dataset <code>houses.csv</code> pour prédire un <strong>prix</strong>, donc une variable numérique continue.</p>
+<hr>
+<h1 id="partie-1--decision-tree-classification">Partie 1 — Decision Tree Classification </h1>
+<h2 id="2-quest-ce-quun-arbre-">2. Qu’est-ce qu’un arbre ? </h2>
+<p>Un arbre est une structure composée de nœuds.</p>
+<p>Les trois types de nœuds sont :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Root node = nœud racine, point de départ de l’arbre
+Internal nodes = nœuds internes, qui divisent les données
+Terminal nodes / leaves = feuilles, qui donnent la prédiction finale
+</code></pre><p>Dans un arbre de décision, chaque nœud pose une question du type :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>petal length &lt;= 2.45 ?
+surface_m2 &lt;= 85 ?
+age_years &lt;= 20 ?
+</code></pre><p>Selon la réponse, l’observation part à gauche ou à droite jusqu’à arriver à une feuille.</p>
+<hr>
+<h2 id="3-arbre-de-décision">3. Arbre de décision </h2>
+<p>Un <strong>Decision Tree</strong> est un algorithme de Machine Learning supervisé utilisable pour :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>classification → prédire une classe
+régression → prédire une valeur numérique
+</code></pre><p>Exemples :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Classification : prédire setosa / versicolor / virginica
+Régression : prédire le prix d’une maison
+</code></pre><p>Son avantage principal est qu’il est <strong>facile à comprendre et à interpréter</strong>, car on peut suivre les décisions étape par étape.</p>
+<hr>
+<h2 id="4-comment-un-arbre-choisit-un-split-">4. Comment un arbre choisit un split ? </h2>
+<p>Un <strong>split</strong> est une séparation des données selon une variable et un seuil.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Day &lt; 2.5
+petal length &lt;= 2.45
+surface_m2 &lt;= 120
+</code></pre><p>L’algorithme teste plusieurs variables et plusieurs seuils, puis choisit le meilleur split.</p>
+<p>Le principe est :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>1. Tester plusieurs seuils possibles
+2. Calculer un score pour chaque split
+3. Choisir le split qui sépare le mieux les données
+4. Répéter récursivement sur chaque sous-groupe
+</code></pre><p>En classification, on utilise souvent des critères comme :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Gini impurity
+Entropy
+</code></pre><p>En régression, on utilise plutôt :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Variance reduction
+Mean squared error reduction
+</code></pre><hr>
+<h2 id="5-exemple-simple-de-split-en-régression">5. Exemple simple de split en régression </h2>
+<p>Si on a :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Day</th>
+<th style="text-align:right">Temp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td style="text-align:right">10</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td style="text-align:right">15</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td style="text-align:right">20</td>
+</tr>
+</tbody>
+</table>
+<p>L’arbre peut tester :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Day &lt; 1.5
+Day &lt; 2.5
+</code></pre><p>Pour chaque split, il calcule la variance dans les groupes créés. Le meilleur split est celui qui donne les groupes les plus homogènes.</p>
+<p>À retenir :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Un bon split crée des groupes plus purs / plus homogènes.
+</code></pre><hr>
+<h2 id="6-train--test-split">6. Train / test split </h2>
+<p>Avant d’entraîner un modèle, il faut séparer les données en deux parties.</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Train set = données utilisées pour apprendre
+Test set = données utilisées pour évaluer
+</code></pre><p>Exemple du Lab 3 :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword keyword-import">import</span> train_test_split
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>datasets <span class="token keyword keyword-import">import</span> load_iris
+
+iris <span class="token operator">=</span> load_iris<span class="token punctuation">(</span><span class="token punctuation">)</span>
+X <span class="token operator">=</span> iris<span class="token punctuation">.</span>data
+y <span class="token operator">=</span> iris<span class="token punctuation">.</span>target
+
+X_train<span class="token punctuation">,</span> X_test<span class="token punctuation">,</span> y_train<span class="token punctuation">,</span> y_test <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>
+    X<span class="token punctuation">,</span> y<span class="token punctuation">,</span>
+    test_size<span class="token operator">=</span><span class="token number">0.3</span><span class="token punctuation">,</span>
+    random_state<span class="token operator">=</span><span class="token number">42</span>
+<span class="token punctuation">)</span>
+</code></pre><p>Ici :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>70 % des données servent à l’entraînement
+30 % des données servent au test
+</code></pre><p><code>random_state=42</code> permet d’obtenir toujours le même découpage, donc des résultats reproductibles.</p>
+<hr>
+<h2 id="7-dataset-iris">7. Dataset Iris </h2>
+<p>Le dataset <strong>Iris</strong> est un dataset classique de classification.</p>
+<p>Il contient des informations sur des fleurs :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>sepal length
+sepal width
+petal length
+petal width
+</code></pre><p>La cible contient trois classes :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>setosa
+versicolor
+virginica
+</code></pre><p>C’est donc une <strong>classification multi-classe</strong>, car il y a plus de deux classes à prédire.</p>
+<hr>
+<h2 id="8-entraîner-un-decisiontreeclassifier">8. Entraîner un DecisionTreeClassifier </h2>
+<p>Dans le Lab, on entraîne un arbre avec une profondeur maximale de 2.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>tree <span class="token keyword keyword-import">import</span> DecisionTreeClassifier
+
+clf <span class="token operator">=</span> DecisionTreeClassifier<span class="token punctuation">(</span>max_depth<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+clf<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span>
+</code></pre><p><code>max_depth=2</code> signifie que l’arbre ne peut pas dépasser deux niveaux de profondeur.</p>
+<p>L’intérêt est de limiter la complexité du modèle.</p>
+<hr>
+<h2 id="9-visualiser-un-arbre">9. Visualiser un arbre </h2>
+<p>On peut afficher graphiquement l’arbre avec <code>plot_tree</code>.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>tree <span class="token keyword keyword-import">import</span> plot_tree
+<span class="token keyword keyword-import">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword keyword-as">as</span> plt
+
+plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+plot_tree<span class="token punctuation">(</span>
+    clf<span class="token punctuation">,</span>
+    filled<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>
+    feature_names<span class="token operator">=</span>iris<span class="token punctuation">.</span>feature_names<span class="token punctuation">,</span>
+    class_names<span class="token operator">=</span>iris<span class="token punctuation">.</span>target_names
+<span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre><p>Cette visualisation permet de comprendre quelles variables sont utilisées pour prendre les décisions.</p>
+<hr>
+<h2 id="10-lire-un-arbre-de-décision">10. Lire un arbre de décision </h2>
+<p>Dans l’arbre affiché, chaque nœud contient généralement :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>gini
+samples
+value
+class
+</code></pre><h3 id="gini">Gini </h3>
+<p><code>gini</code> mesure l’impureté d’un nœud.</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>gini faible = nœud plutôt pur
+gini élevé = nœud mélangé
+</code></pre><p>Un nœud est pur si les observations qu’il contient appartiennent presque toutes à la même classe.</p>
+<h3 id="samples">Samples </h3>
+<p><code>samples</code> indique le nombre d’observations qui arrivent dans ce nœud.</p>
+<h3 id="value">Value </h3>
+<p><code>value</code> indique la répartition des observations par classe.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>value = [35, 0, 0]
+</code></pre><p>Cela signifie :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>35 setosa
+0 versicolor
+0 virginica
+</code></pre><h3 id="class">Class </h3>
+<p><code>class</code> indique la classe majoritaire prédite par le nœud.</p>
+<hr>
+<h2 id="11-arbre-limité-vs-arbre-complètement-développé">11. Arbre limité vs arbre complètement développé </h2>
+<p>Dans le Lab, on compare un arbre limité :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>DecisionTreeClassifier<span class="token punctuation">(</span>max_depth<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+</code></pre><p>avec un arbre sans limite explicite :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>DecisionTreeClassifier<span class="token punctuation">(</span>random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+</code></pre><p>Un arbre limité est plus simple, plus lisible et risque moins de surapprendre.</p>
+<p>Un arbre complètement développé peut devenir très précis sur le train set, mais il peut faire de l’<strong>overfitting</strong>.</p>
+<hr>
+<h2 id="12-overfitting-avec-les-arbres">12. Overfitting avec les arbres </h2>
+<p>L’<strong>overfitting</strong> arrive quand le modèle apprend trop précisément les données d’entraînement, y compris le bruit ou les cas particuliers.</p>
+<p>Dans un arbre de décision, cela arrive souvent si l’arbre est trop profond.</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Arbre trop profond → modèle complexe → risque d’overfitting
+Arbre trop simple → modèle trop limité → risque d’underfitting
+</code></pre><p>Pour limiter l’overfitting, on peut utiliser :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>max_depth
+min_samples_leaf
+min_samples_split
+</code></pre><hr>
+<h2 id="13-prédire-une-observation">13. Prédire une observation </h2>
+<p>Le Lab demande de prédire une observation du test set.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>example <span class="token operator">=</span> X_test<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+predicted_class <span class="token operator">=</span> clf<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>example<span class="token punctuation">)</span>
+
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"Predicted class:"</span><span class="token punctuation">,</span> iris<span class="token punctuation">.</span>target_names<span class="token punctuation">[</span>predicted_class<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"Real class:"</span><span class="token punctuation">,</span> iris<span class="token punctuation">.</span>target_names<span class="token punctuation">[</span>y_test<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre><p><code>reshape(1, -1)</code> est nécessaire parce que Scikit-learn attend une matrice en entrée, même pour une seule observation.</p>
+<hr>
+<h2 id="14-prédire-tout-le-test-set">14. Prédire tout le test set </h2>
+<p>Une fois le modèle entraîné, on peut prédire toutes les données de test.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>y_pred <span class="token operator">=</span> clf<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span>
+</code></pre><p>Ensuite, on peut comparer <code>y_pred</code> avec <code>y_test</code> pour évaluer le modèle. Les métriques classiques de classification sont notamment l’accuracy, la precision, le recall et le F1-score, qui se calculent à partir de la matrice de confusion.</p>
+<hr>
+<h1 id="partie-2--regression--prédire-le-prix-dune-maison">Partie 2 — Regression : prédire le prix d’une maison </h1>
+<h2 id="15-objectif-de-la-régression">15. Objectif de la régression </h2>
+<p>La <strong>régression</strong> consiste à prédire une valeur numérique continue.</p>
+<p>Exemple du Lab :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Prédire le prix d’une maison
+</code></pre><p>La variable cible est :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>price
+</code></pre><p>Contrairement à la classification, on ne prédit pas une classe, mais une valeur.</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Classification → spam / non spam
+Régression → prix en euros
+</code></pre><hr>
+<h2 id="16-dataset-housescsv">16. Dataset houses.csv </h2>
+<p>Le dataset contient 300 maisons.</p>
+<p>Les colonnes sont :</p>
+<table>
+<thead>
+<tr>
+<th>Colonne</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>surface_m2</code></td>
+<td>surface habitable en m²</td>
+</tr>
+<tr>
+<td><code>bedrooms</code></td>
+<td>nombre de chambres</td>
+</tr>
+<tr>
+<td><code>age_years</code></td>
+<td>âge de la maison</td>
+</tr>
+<tr>
+<td><code>garage</code></td>
+<td>nombre de places de garage</td>
+</tr>
+<tr>
+<td><code>district</code></td>
+<td>quartier : Centre, Suburb ou Rural</td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td>prix de vente à prédire</td>
+</tr>
+</tbody>
+</table>
+<p>La variable cible est :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>price
+</code></pre><p>Les autres colonnes sont les variables explicatives.</p>
+<hr>
+<h2 id="17-explorer-le-dataset">17. Explorer le dataset </h2>
+<p>Le Lab commence par charger et inspecter les données.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-import">import</span> pandas <span class="token keyword keyword-as">as</span> pd
+
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">"houses.csv"</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre><p>Ces commandes permettent de voir :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>les colonnes
+les types de données
+les valeurs manquantes éventuelles
+les premières lignes
+les statistiques descriptives
+</code></pre><p>L’exploration des données est une étape essentielle avant l’entraînement d’un modèle, car elle permet de comprendre la structure du dataset, de détecter les anomalies et d’identifier les relations entre variables.</p>
+<hr>
+<h2 id="18-corrélation-avec-la-cible">18. Corrélation avec la cible </h2>
+<p>Le Lab demande d’afficher la corrélation de chaque variable numérique avec <code>price</code>.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>df<span class="token punctuation">.</span>corr<span class="token punctuation">(</span>numeric_only<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">"price"</span><span class="token punctuation">]</span>
+</code></pre><p>Cela permet de voir quelles variables semblent les plus liées au prix.</p>
+<p>Exemple d’interprétation :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>surface_m2 fortement corrélée à price → la surface influence probablement beaucoup le prix
+age_years corrélation négative → les maisons plus anciennes peuvent valoir moins cher
+</code></pre><p>Attention : une corrélation ne prouve pas une causalité.</p>
+<hr>
+<h2 id="19-encodage-de-la-variable-catégorielle">19. Encodage de la variable catégorielle </h2>
+<p>La colonne <code>district</code> contient du texte :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Centre
+Suburb
+Rural
+</code></pre><p>Or, les modèles de Machine Learning ont besoin de nombres.</p>
+<p>Comme ces catégories n’ont pas d’ordre naturel, on utilise le <strong>One-Hot Encoding</strong>.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>df <span class="token operator">=</span> pd<span class="token punctuation">.</span>get_dummies<span class="token punctuation">(</span>df<span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"district"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> drop_first<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+</code></pre><p>On utilise <code>drop_first=True</code> pour éviter de créer une colonne redondante.</p>
+<p>À retenir :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Label Encoding → utile si les catégories ont un ordre
+One-Hot Encoding → utile si les catégories n’ont pas d’ordre
+</code></pre><p>Ici, <code>Centre</code>, <code>Suburb</code> et <code>Rural</code> ne sont pas naturellement ordonnés, donc le One-Hot Encoding est plus adapté.</p>
+<hr>
+<h2 id="20-séparer-x-et-y">20. Séparer X et y </h2>
+<p>Il faut séparer les variables explicatives et la variable cible.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>X <span class="token operator">=</span> df<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>columns<span class="token operator">=</span><span class="token string">"price"</span><span class="token punctuation">)</span>
+y <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">"price"</span><span class="token punctuation">]</span>
+</code></pre><p>À retenir :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>X = features, variables utilisées pour prédire
+y = target, variable à prédire
+</code></pre><p>Ensuite, on divise en train/test.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword keyword-import">import</span> train_test_split
+
+X_train<span class="token punctuation">,</span> X_test<span class="token punctuation">,</span> y_train<span class="token punctuation">,</span> y_test <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>
+    X<span class="token punctuation">,</span> y<span class="token punctuation">,</span>
+    test_size<span class="token operator">=</span><span class="token number">0.3</span><span class="token punctuation">,</span>
+    random_state<span class="token operator">=</span><span class="token number">42</span>
+<span class="token punctuation">)</span>
+</code></pre><hr>
+<h2 id="21-feature-scaling">21. Feature scaling </h2>
+<p>Les variables n’ont pas toutes la même échelle.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>surface_m2 peut aller de 40 à 250
+garage peut aller de 0 à 2
+age_years peut aller de 0 à 100
+</code></pre><p>Certains modèles sont sensibles à l’échelle, notamment <strong>KNN</strong>, car il utilise des distances.</p>
+<p>On standardise donc les variables :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword keyword-import">import</span> StandardScaler
+
+scaler <span class="token operator">=</span> StandardScaler<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+X_train_scaled <span class="token operator">=</span> scaler<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>X_train<span class="token punctuation">)</span>
+X_test_scaled <span class="token operator">=</span> scaler<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span>
+</code></pre><p>Point important :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>fit_transform sur le train set
+transform seulement sur le test set
+</code></pre><p>Il ne faut pas faire apprendre le scaler sur le test set, sinon il y a un risque de <strong>data leakage</strong>.</p>
+<hr>
+<h2 id="22-standardscaler">22. StandardScaler </h2>
+<p><code>StandardScaler</code> transforme les variables pour qu’elles aient :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>moyenne = 0
+écart-type = 1
+</code></pre><p>Formule :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>z = (x - moyenne) / écart-type
+</code></pre><p>Cette transformation rend les variables comparables entre elles.</p>
+<p>Elle est particulièrement importante pour les modèles basés sur les distances :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>KNN
+SVM
+K-Means
+réseaux de neurones
+</code></pre><p>Les arbres de décision, eux, sont beaucoup moins sensibles au scaling.</p>
+<hr>
+<h2 id="23-fonction-dévaluation">23. Fonction d’évaluation </h2>
+<p>Le Lab crée une fonction <code>evaluate()</code> pour entraîner un modèle, faire des prédictions et afficher ses performances.</p>
+<p>Elle mesure :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>MAE
+R²
+training time
+prediction time
+</code></pre><p>Code simplifié :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-import">import</span> time
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword keyword-import">import</span> mean_absolute_error<span class="token punctuation">,</span> r2_score
+
+<span class="token keyword keyword-def">def</span> <span class="token function">evaluate</span><span class="token punctuation">(</span>model<span class="token punctuation">,</span> X_tr<span class="token punctuation">,</span> y_tr<span class="token punctuation">,</span> X_te<span class="token punctuation">,</span> y_te<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    start <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_tr<span class="token punctuation">,</span> y_tr<span class="token punctuation">)</span>
+    train_time <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start
+
+    start <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    y_pred <span class="token operator">=</span> model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X_te<span class="token punctuation">)</span>
+    pred_time <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start
+
+    mae <span class="token operator">=</span> mean_absolute_error<span class="token punctuation">(</span>y_te<span class="token punctuation">,</span> y_pred<span class="token punctuation">)</span>
+    r2 <span class="token operator">=</span> r2_score<span class="token punctuation">(</span>y_te<span class="token punctuation">,</span> y_pred<span class="token punctuation">)</span>
+
+    <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+    <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"MAE:"</span><span class="token punctuation">,</span> mae<span class="token punctuation">)</span>
+    <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"R2:"</span><span class="token punctuation">,</span> r2<span class="token punctuation">)</span>
+    <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"Training time:"</span><span class="token punctuation">,</span> train_time<span class="token punctuation">)</span>
+    <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"Prediction time:"</span><span class="token punctuation">,</span> pred_time<span class="token punctuation">)</span>
+</code></pre><p>L’intérêt de cette fonction est de comparer plusieurs modèles avec le même protocole.</p>
+<hr>
+<h2 id="24-mae--mean-absolute-error">24. MAE — Mean Absolute Error </h2>
+<p>La <strong>MAE</strong> mesure l’erreur moyenne absolue entre les vraies valeurs et les prédictions.</p>
+<p>Formule intuitive :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>MAE = moyenne des |prix réel - prix prédit|
+</code></pre><p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>MAE = 20 000 €
+</code></pre><p>Cela signifie que le modèle se trompe en moyenne de 20 000 €.</p>
+<p>À retenir :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>MAE faible = meilleur modèle
+MAE = 0 = prédiction parfaite
+</code></pre><p>La MAE est facile à interpréter, car elle s’exprime dans la même unité que la variable cible.</p>
+<hr>
+<h2 id="25-r2--coefficient-de-détermination">25. R² — coefficient de détermination </h2>
+<p>Le <strong>R²</strong> mesure la part de variance expliquée par le modèle.</p>
+<p>Interprétation :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>R² proche de 1 → bon modèle
+R² proche de 0 → modèle peu utile
+R² négatif → modèle pire qu’une prédiction naïve
+</code></pre><p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>R² = 0.85
+</code></pre><p>Cela signifie que le modèle explique environ 85 % de la variance de la variable cible.</p>
+<hr>
+<h2 id="26-temps-dentraînement-et-temps-de-prédiction">26. Temps d’entraînement et temps de prédiction </h2>
+<p>Le Lab mesure aussi :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>training time
+prediction time
+</code></pre><p>C’est important, car un modèle peut être précis mais trop lent.</p>
+<p>En pratique, on compare donc :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>performance prédictive
+rapidité d’entraînement
+rapidité de prédiction
+interprétabilité
+simplicité
+</code></pre><hr>
+<h1 id="modèle-1--knn-regressor">Modèle 1 — KNN Regressor </h1>
+<h2 id="27-principe-du-knn">27. Principe du KNN </h2>
+<p>Le <strong>KNN</strong>, ou <strong>K-Nearest Neighbors</strong>, prédit une valeur en regardant les <code>k</code> voisins les plus proches dans le train set.</p>
+<p>En régression, il prédit souvent la moyenne des valeurs des voisins.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>k = 5
+
+Prix des 5 maisons les plus proches :
+200 000, 210 000, 220 000, 230 000, 240 000
+
+Prédiction ≈ 220 000 €
+</code></pre><hr>
+<h2 id="28-knn-est-sensible-au-scaling">28. KNN est sensible au scaling </h2>
+<p>KNN utilise des distances.</p>
+<p>Si une variable a des valeurs beaucoup plus grandes qu’une autre, elle domine le calcul de distance.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>surface_m2 : 50 à 250
+garage : 0 à 2
+</code></pre><p>Sans scaling, <code>surface_m2</code> pèsera beaucoup plus que <code>garage</code>.</p>
+<p>C’est pourquoi le Lab utilise KNN avec les données standardisées :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>neighbors <span class="token keyword keyword-import">import</span> KNeighborsRegressor
+
+knn <span class="token operator">=</span> KNeighborsRegressor<span class="token punctuation">(</span>n_neighbors<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
+
+res_knn <span class="token operator">=</span> evaluate<span class="token punctuation">(</span>
+    knn<span class="token punctuation">,</span>
+    X_train_scaled<span class="token punctuation">,</span>
+    y_train<span class="token punctuation">,</span>
+    X_test_scaled<span class="token punctuation">,</span>
+    y_test<span class="token punctuation">,</span>
+    <span class="token string">"KNN (k=5)"</span>
+<span class="token punctuation">)</span>
+</code></pre><hr>
+<h2 id="29-hyperparamètre-k">29. Hyperparamètre k </h2>
+<p>Dans KNN, <code>k</code> correspond au nombre de voisins utilisés.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>KNeighborsRegressor<span class="token punctuation">(</span>n_neighbors<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
+</code></pre><p>Effet de <code>k</code> :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>k petit → modèle très local, plus sensible au bruit
+k grand → modèle plus stable, mais parfois trop général
+</code></pre><p>Le Lab demande de tester plusieurs valeurs :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>k = 1, 3, 5, 10, 20
+</code></pre><p>Exemple de boucle :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-for">for</span> k <span class="token keyword keyword-in">in</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    knn <span class="token operator">=</span> KNeighborsRegressor<span class="token punctuation">(</span>n_neighbors<span class="token operator">=</span>k<span class="token punctuation">)</span>
+    evaluate<span class="token punctuation">(</span>
+        knn<span class="token punctuation">,</span>
+        X_train_scaled<span class="token punctuation">,</span>
+        y_train<span class="token punctuation">,</span>
+        X_test_scaled<span class="token punctuation">,</span>
+        y_test<span class="token punctuation">,</span>
+        <span class="token string-interpolation"><span class="token string">f"KNN (k=</span><span class="token interpolation"><span class="token punctuation">{</span>k<span class="token punctuation">}</span></span><span class="token string">)"</span></span>
+    <span class="token punctuation">)</span>
+</code></pre><p>On choisit la valeur de <code>k</code> qui donne la meilleure performance, souvent la MAE la plus faible.</p>
+<hr>
+<h1 id="modèle-2--decision-tree-regressor">Modèle 2 — Decision Tree Regressor </h1>
+<h2 id="30-principe-du-decision-tree-regressor">30. Principe du Decision Tree Regressor </h2>
+<p>Un <strong>DecisionTreeRegressor</strong> est un arbre de décision utilisé pour prédire une valeur numérique.</p>
+<p>Il fonctionne en divisant les données en régions.</p>
+<p>Dans chaque région, il prédit une valeur constante, souvent la moyenne des valeurs du train set dans cette région.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Si surface_m2 &lt;= 80 → prédiction moyenne = 220 000 €
+Si surface_m2 &gt; 80 → autre split
+</code></pre><hr>
+<h2 id="31-entraîner-un-decisiontreeregressor">31. Entraîner un DecisionTreeRegressor </h2>
+<p>Dans le Lab, il faut créer un arbre avec :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>max_depth = 5
+random_state = 42
+</code></pre><p>Code attendu :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>tree <span class="token keyword keyword-import">import</span> DecisionTreeRegressor
+
+tree <span class="token operator">=</span> DecisionTreeRegressor<span class="token punctuation">(</span>max_depth<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+
+res_tree <span class="token operator">=</span> evaluate<span class="token punctuation">(</span>
+    tree<span class="token punctuation">,</span>
+    X_train<span class="token punctuation">,</span>
+    y_train<span class="token punctuation">,</span>
+    X_test<span class="token punctuation">,</span>
+    y_test<span class="token punctuation">,</span>
+    <span class="token string">"Decision Tree (depth=5)"</span>
+<span class="token punctuation">)</span>
+</code></pre><p>Point important :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>On utilise X_train et X_test non standardisés.
+</code></pre><p>Pourquoi ? Parce que les arbres ne sont pas basés sur des distances. Ils cherchent des seuils de séparation, donc le scaling n’est pas nécessaire.</p>
+<hr>
+<h2 id="32-visualiser-le-decision-tree-regressor">32. Visualiser le Decision Tree Regressor </h2>
+<p>Le Lab demande de visualiser l’arbre.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+plot_tree<span class="token punctuation">(</span>
+    tree<span class="token punctuation">,</span>
+    filled<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>
+    feature_names<span class="token operator">=</span>X<span class="token punctuation">.</span>columns<span class="token punctuation">,</span>
+    max_depth<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>
+    fontsize<span class="token operator">=</span><span class="token number">9</span>
+<span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre><p>Cela permet de voir quelle variable est utilisée en premier.</p>
+<p>La première variable utilisée correspond souvent à une variable très importante pour prédire le prix. On peut comparer cette variable avec celle qui avait la plus forte corrélation avec <code>price</code>.</p>
+<hr>
+<h2 id="33-comparer-knn-et-decision-tree">33. Comparer KNN et Decision Tree </h2>
+<p>Le Lab demande de construire une table de comparaison.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>results <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">[</span>res_knn<span class="token punctuation">,</span> res_tree<span class="token punctuation">]</span><span class="token punctuation">)</span>
+results
+</code></pre><p>On compare :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>MAE
+R²
+training time
+prediction time
+</code></pre><p>Interprétation :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>MAE plus faible → meilleur en erreur moyenne
+R² plus élevé → meilleur pouvoir explicatif
+Training time faible → modèle rapide à entraîner
+Prediction time faible → modèle rapide à utiliser
+</code></pre><p>Il ne faut pas choisir un modèle uniquement sur une métrique. Il faut aussi tenir compte de l’interprétabilité et du contexte d’utilisation.</p>
+<hr>
+<h2 id="34-predicted-vs-actual">34. Predicted vs actual </h2>
+<p>Le Lab demande de visualiser les prédictions.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-import">import</span> numpy <span class="token keyword keyword-as">as</span> np
+<span class="token keyword keyword-import">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword keyword-as">as</span> plt
+
+y_pred <span class="token operator">=</span> knn<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X_test_scaled<span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>y_test<span class="token punctuation">,</span> y_pred<span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.6</span><span class="token punctuation">)</span>
+
+lims <span class="token operator">=</span> <span class="token punctuation">[</span>y_test<span class="token punctuation">.</span><span class="token builtin">min</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> y_test<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>lims<span class="token punctuation">,</span> lims<span class="token punctuation">,</span> <span class="token string">"r--"</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"perfect prediction"</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">"Actual price (€)"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">"Predicted price (€)"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">"Predicted vs actual price"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre><p>Interprétation :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Points proches de la diagonale → bonnes prédictions
+Points éloignés de la diagonale → erreurs importantes
+</code></pre><p>La diagonale représente une prédiction parfaite :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>prix prédit = prix réel
+</code></pre><hr>
+<h2 id="35-améliorer-un-modèle">35. Améliorer un modèle </h2>
+<p>Le Lab propose d’aller plus loin en modifiant les hyperparamètres.</p>
+<p>Pour KNN :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>n_neighbors
+</code></pre><p>Pour Decision Tree :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>max_depth
+min_samples_leaf
+min_samples_split
+</code></pre><p>Exemple :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>tree <span class="token operator">=</span> DecisionTreeRegressor<span class="token punctuation">(</span>
+    max_depth<span class="token operator">=</span><span class="token number">7</span><span class="token punctuation">,</span>
+    min_samples_leaf<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span>
+    random_state<span class="token operator">=</span><span class="token number">42</span>
+<span class="token punctuation">)</span>
+</code></pre><p>L’objectif est de réduire la MAE et d’améliorer le R² sans créer trop d’overfitting.</p>
+<hr>
+<h2 id="36-méthodes-densemble">36. Méthodes d’ensemble </h2>
+<p>À la fin, le Lab annonce que le projet devra utiliser une méthode d’ensemble.</p>
+<p>Exemples :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Random Forest
+Stacking
+AdaBoost
+Gradient Boosting
+Extra Trees
+</code></pre><p>Une <strong>méthode d’ensemble</strong> combine plusieurs modèles pour obtenir une prédiction plus robuste.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Random Forest = plusieurs arbres de décision entraînés différemment
+</code></pre><p>L’idée générale est qu’un ensemble de modèles peut être plus performant qu’un modèle seul.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html><html><head>
+      <title>Machine learning</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\wandr\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.30\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-details{margin:0;padding:0;border:none}.markdown-preview .md-toc summary.md-toc-link-wrapper{cursor:pointer;list-style-position:outside}.markdown-preview .md-toc summary.md-toc-link-wrapper::marker{font-size:.85em}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='0']{margin-left:12px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='1']{margin-left:28px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='2']{margin-left:44px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='3']{margin-left:60px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='4']{margin-left:76px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='5']{margin-left:80px}.markdown-preview a.tag,.markdown-preview a.tag:active,.markdown-preview a.tag:link,.markdown-preview a.tag:visited,.markdown-preview span.tag:not(.token){display:inline-block;background-color:var(--vscode-badge-background,rgba(127,127,127,.18));color:var(--vscode-badge-foreground,currentColor);border-radius:2em;font-size:.85em;font-weight:500;padding:.05em .55em;line-height:1.5;white-space:nowrap;text-decoration:none;text-shadow:none;box-shadow:none;transition:background-color .12s ease,opacity .12s ease}.markdown-preview a.tag{cursor:pointer}.markdown-preview a.tag:focus,.markdown-preview a.tag:hover{background-color:var(--vscode-badge-background,rgba(127,127,127,.32));color:var(--vscode-badge-foreground,currentColor);opacity:.85;text-decoration:none;outline:0}.markdown-preview .wikilink-embed-content{border-left:3px solid var(--vscode-textBlockQuote-border,rgba(128,128,128,.3));background:var(--vscode-textBlockQuote-background,rgba(128,128,128,.05));margin:.5em 0;padding:.5em .75em;border-radius:0 3px 3px 0}.markdown-preview .wikilink-embed-content.wikilink-embed-error{border-left-color:var(--vscode-errorForeground,#cf222e);color:var(--vscode-errorForeground,#cf222e);font-style:italic;opacity:.8}.markdown-preview .wikilink-embed-content h1:first-child,.markdown-preview .wikilink-embed-content h2:first-child,.markdown-preview .wikilink-embed-content h3:first-child,.markdown-preview .wikilink-embed-content h4:first-child,.markdown-preview .wikilink-embed-content h5:first-child,.markdown-preview .wikilink-embed-content h6:first-child{margin-top:.25em}.markdown-preview .wikilink-embed-content .wikilink-embed-content{margin:.25em 0;padding:.25em .5em}.markdown-preview .block-id{display:none}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:var(--vscode-scrollbarSlider-background,rgba(150,150,150,.66));border:4px solid var(--vscode-scrollbarSlider-background,rgba(150,150,150,.66));background-clip:content-box}.scrollbar-style::-webkit-scrollbar-thumb:hover{background-color:var(--vscode-scrollbarSlider-hoverBackground,rgba(120,120,120,.66))}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:var(--vscode-scrollbarSlider-background,rgba(150,150,150,.66));border:4px solid var(--vscode-scrollbarSlider-background,rgba(150,150,150,.66));background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb:hover{background-color:var(--vscode-scrollbarSlider-hoverBackground,rgba(120,120,120,.66))}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-details{margin:0;padding:0;border:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='0']{padding-left:0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='1']{padding-left:16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='2']{padding-left:32px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='3']{padding-left:48px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='4']{padding-left:64px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='5']{padding-left:80px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. -->
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+    </head>
+    <body for="html-export">
+      <p style="max-width:914px;margin:1rem auto 0;padding:0 2rem;"><a href="index.html">&larr; Retour &agrave; la mati&egrave;re</a></p>
+      <div class="crossnote markdown-preview  ">
+      
+<h2 id="1-pandas-et-dataframe">1. Pandas et DataFrame </h2>
+<p><strong>Pandas</strong> est une bibliothèque Python utilisée pour manipuler et analyser des données tabulaires. Sa structure principale est le <strong>DataFrame</strong>, qui ressemble à un tableau avec des lignes, des colonnes et des index.</p>
+<p>Un DataFrame peut être créé à partir d’un dictionnaire :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-import">import</span> pandas <span class="token keyword keyword-as">as</span> pd
+
+data <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"Residents"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">,</span> <span class="token number">320</span><span class="token punctuation">,</span> <span class="token number">1200</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">"Capital"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"Geneve"</span><span class="token punctuation">,</span> <span class="token string">"Paris"</span><span class="token punctuation">,</span> <span class="token string">"Washington"</span><span class="token punctuation">,</span> <span class="token string">"Pequin"</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span>
+</code></pre><p>Par défaut, Pandas crée un index numérique allant de <code>0</code> à <code>n-1</code>. On peut aussi définir ses propres index :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>index1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Switzerland"</span><span class="token punctuation">,</span> <span class="token string">"France"</span><span class="token punctuation">,</span> <span class="token string">"USA"</span><span class="token punctuation">,</span> <span class="token string">"China"</span><span class="token punctuation">]</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>data<span class="token punctuation">,</span> index<span class="token operator">=</span>index1<span class="token punctuation">)</span>
+</code></pre><p>Les <strong>colonnes</strong> représentent les variables, tandis que les <strong>lignes</strong> représentent les observations.</p>
+<hr>
+<h2 id="2-inspection-rapide-dun-dataframe">2. Inspection rapide d’un DataFrame </h2>
+<p>Avant toute modélisation, il faut comprendre les données. Les commandes principales sont :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>df<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>tail<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>shape
+df<span class="token punctuation">.</span>columns
+df<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre><p><code>df.head(5)</code> affiche les 5 premières lignes, <code>df.tail(5)</code> les 5 dernières, <code>df.shape</code> donne le nombre de lignes et de colonnes, <code>df.columns</code> donne les noms des colonnes, <code>df.info()</code> donne les types, les valeurs non nulles et la mémoire utilisée, et <code>df.describe()</code> fournit des statistiques descriptives.</p>
+<p>À retenir : <code>df.info()</code> est très utile pour repérer les valeurs manquantes et les types incorrects, tandis que <code>df.describe()</code> permet d’avoir une première idée de la distribution des variables numériques.</p>
+<hr>
+<h2 id="3-sélection-de-données-avec-pandas">3. Sélection de données avec Pandas </h2>
+<p>Il existe plusieurs façons de sélectionner des données.</p>
+<p>Pour sélectionner une colonne :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>df<span class="token punctuation">[</span><span class="token string">"age"</span><span class="token punctuation">]</span>
+</code></pre><p>Cela retourne une <strong>Series</strong>, c’est-à-dire une structure unidimensionnelle.</p>
+<p>Pour sélectionner plusieurs colonnes :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>df<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token string">"age"</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+</code></pre><p>Cela retourne un <strong>DataFrame</strong>.</p>
+<p>Pour sélectionner par nom d’index ou par label, on utilise <code>.loc[]</code> :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token string">"France"</span><span class="token punctuation">]</span>
+df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>df<span class="token punctuation">[</span><span class="token string">"age"</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> <span class="token number">30</span><span class="token punctuation">]</span>
+</code></pre><p>Pour sélectionner par position numérique, on utilise <code>.iloc[]</code> :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>df<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+df<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">]</span>
+</code></pre><p>La différence essentielle est que <code>.loc[]</code> sélectionne par label, alors que <code>.iloc[]</code> sélectionne par position.</p>
+<hr>
+<h2 id="4-filtrage-des-données">4. Filtrage des données </h2>
+<p>Le filtrage permet de conserver seulement certaines lignes selon une condition.</p>
+<p>Exemple avec une condition simple :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>filtered_df <span class="token operator">=</span> df<span class="token punctuation">[</span>df<span class="token punctuation">[</span><span class="token string">"age"</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> <span class="token number">25</span><span class="token punctuation">]</span>
+</code></pre><p>Exemple avec plusieurs conditions :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>filtered_df <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">"age"</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> <span class="token number">25</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">"city"</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">"Paris"</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+</code></pre><p>On peut aussi utiliser <code>query()</code> :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>df<span class="token punctuation">.</span>query<span class="token punctuation">(</span><span class="token string">"age &gt; 25 &amp; city == 'Paris'"</span><span class="token punctuation">)</span>
+</code></pre><p>Le filtrage est une étape importante pour analyser des sous-groupes, supprimer des données non pertinentes ou préparer un dataset pour l’entraînement.</p>
+<hr>
+<h2 id="5-lecture-et-écriture-de-données">5. Lecture et écriture de données </h2>
+<p>Pandas permet de charger et d’exporter différents formats de données.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">"data.csv"</span><span class="token punctuation">)</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_excel<span class="token punctuation">(</span><span class="token string">"data.xlsx"</span><span class="token punctuation">)</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_sql<span class="token punctuation">(</span><span class="token string">"SELECT * FROM table"</span><span class="token punctuation">,</span> con<span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">"new_data.csv"</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+</code></pre><p>À retenir : <code>index=False</code> évite d’exporter l’index Pandas comme une colonne supplémentaire dans le fichier CSV.</p>
+<hr>
+<h2 id="6-eda--exploratory-data-analysis">6. EDA — Exploratory Data Analysis </h2>
+<p>L’<strong>EDA</strong>, ou analyse exploratoire des données, est une étape indispensable avant l’entraînement d’un modèle. Elle permet de comprendre la structure du dataset, de repérer les anomalies, d’identifier les valeurs manquantes et d’observer les relations entre variables.</p>
+<p>Les étapes principales de l’EDA sont :</p>
+<ul>
+<li>charger les données ;</li>
+<li>vérifier les dimensions du dataset ;</li>
+<li>analyser les types de colonnes ;</li>
+<li>calculer des statistiques descriptives ;</li>
+<li>identifier les valeurs manquantes ;</li>
+<li>visualiser les distributions ;</li>
+<li>détecter les anomalies et valeurs extrêmes ;</li>
+<li>comprendre les relations entre variables.</li>
+</ul>
+<p>Une erreur fréquente consiste à entraîner directement un modèle sans explorer les données. C’est risqué, car un modèle entraîné sur des données sales ou mal comprises produira souvent des résultats trompeurs.</p>
+<hr>
+<h2 id="7-nettoyage-des-données">7. Nettoyage des données </h2>
+<p>Le <strong>data cleaning</strong> consiste à corriger ou supprimer les problèmes présents dans les données.</p>
+<p>Les principales opérations sont :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>df<span class="token punctuation">.</span>dropna<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"col"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>drop_duplicates<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"old"</span><span class="token punctuation">:</span> <span class="token string">"new"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+df<span class="token punctuation">[</span><span class="token string">"col"</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">"col"</span><span class="token punctuation">]</span><span class="token punctuation">.</span>astype<span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">)</span>
+</code></pre><p><code>dropna()</code> supprime les lignes contenant des valeurs manquantes, <code>fillna()</code> remplace les valeurs manquantes, <code>drop_duplicates()</code> supprime les doublons, <code>replace()</code> remplace certaines valeurs et <code>astype()</code> change le type d’une colonne.</p>
+<p>Il faut retenir qu’il n’y a pas une seule bonne méthode pour gérer les valeurs manquantes. Supprimer une ligne peut être pertinent si les données manquantes sont rares, mais l’imputation est souvent préférable si supprimer trop de lignes ferait perdre beaucoup d’information.</p>
+<hr>
+<h2 id="8-valeurs-manquantes">8. Valeurs manquantes </h2>
+<p>Une <strong>valeur manquante</strong> correspond à une donnée absente. Elle peut apparaître sous forme de <code>NaN</code>, <code>None</code>, cellule vide, ou parfois d’une valeur codée comme <code>?</code>, <code>999</code>, <code>unknown</code>.</p>
+<p>Deux grandes stratégies existent :</p>
+<p><strong>Suppression</strong> : on supprime les lignes ou colonnes contenant trop de valeurs manquantes.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>df<span class="token punctuation">.</span>dropna<span class="token punctuation">(</span>subset<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"col"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre><p><strong>Imputation</strong> : on remplace les valeurs manquantes par une valeur estimée.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>df<span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"age"</span><span class="token punctuation">:</span> df<span class="token punctuation">[</span><span class="token string">"age"</span><span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre><p>Pour une variable numérique, on peut utiliser la moyenne ou la médiane. Pour une variable catégorielle, on utilise souvent la valeur la plus fréquente.</p>
+<hr>
+<h2 id="9-outliers-et-anomalies">9. Outliers et anomalies </h2>
+<p>Un <strong>outlier</strong> est une valeur extrême ou anormale par rapport aux autres observations. Par exemple, un revenu de 300 000 € dans une population majoritairement située autour de 50 000 € peut être considéré comme atypique.</p>
+<p>Un outlier peut être :</p>
+<ul>
+<li>une vraie valeur rare mais correcte ;</li>
+<li>une erreur de saisie ;</li>
+<li>une donnée issue d’un phénomène différent ;</li>
+<li>un cas extrême utile pour le modèle.</li>
+</ul>
+<p>Il ne faut donc pas supprimer automatiquement les outliers. Il faut d’abord comprendre leur origine. Dans les graphiques fournis, la distribution du revenu présente une masse principale autour des revenus faibles ou moyens, puis un second pic autour de revenus très élevés. Cela indique une distribution asymétrique, possiblement composée de plusieurs sous-populations.</p>
+<hr>
+<h2 id="10-visualisation-des-données">10. Visualisation des données </h2>
+<p>La visualisation permet de comprendre rapidement la distribution des variables et les relations entre elles.</p>
+<p>Exemples de graphiques utiles :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>df<span class="token punctuation">[</span><span class="token string">"age"</span><span class="token punctuation">]</span><span class="token punctuation">.</span>hist<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>plot<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token string">"age"</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token string">"income"</span><span class="token punctuation">)</span>
+</code></pre><p>Dans les images fournies, on observe deux distributions : la taille et le revenu. La taille présente une distribution relativement régulière, proche d’une forme normale mais légèrement asymétrique. Le revenu présente une distribution beaucoup plus déséquilibrée, avec une forte concentration et un second pic vers les revenus élevés. Cette différence est importante, car toutes les variables ne se comportent pas de la même manière.</p>
+<hr>
+<h2 id="11-feature-scaling--mise-à-léchelle-des-variables">11. Feature scaling : mise à l’échelle des variables </h2>
+<p>Le <strong>feature scaling</strong> consiste à transformer les variables numériques pour les placer sur une échelle comparable. C’est important parce que certains algorithmes sont sensibles à l’échelle des variables.</p>
+<p>Par exemple, une variable “revenu” peut aller de 0 à 400 000, alors qu’une variable “taille” varie seulement entre 150 et 200. Sans scaling, le modèle peut accorder trop d’importance au revenu simplement parce que ses valeurs numériques sont plus grandes.</p>
+<p>Les algorithmes particulièrement sensibles au scaling sont notamment :</p>
+<ul>
+<li>KNN ;</li>
+<li>SVM ;</li>
+<li>régression logistique régularisée ;</li>
+<li>réseaux de neurones ;</li>
+<li>PCA ;</li>
+<li>K-Means.</li>
+</ul>
+<p>Les arbres de décision, Random Forest et Gradient Boosting sont en général moins sensibles au scaling.</p>
+<hr>
+<h2 id="12-min-max-scaling">12. Min-Max Scaling </h2>
+<p>Le <strong>Min-Max Scaling</strong> transforme une variable pour la ramener dans un intervalle donné, souvent entre 0 et 1.</p>
+<p>Formule :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>x_scaled = (x - min(x)) / (max(x) - min(x))
+</code></pre><p>Après transformation, la plus petite valeur devient 0 et la plus grande devient 1.</p>
+<p>Dans les graphiques fournis, les distributions gardent globalement la même forme après Min-Max Scaling : la taille reste distribuée de manière régulière, et le revenu garde son second pic. Ce point est essentiel : le Min-Max Scaling change l’échelle, mais ne transforme pas la forme de la distribution.</p>
+<p>Avantage : les variables deviennent comparables.</p>
+<p>Limite : très sensible aux outliers. Si une valeur extrême est très grande, elle écrase les autres valeurs dans une petite zone de l’intervalle.</p>
+<hr>
+<h2 id="13-standardisation-vs-normalisation-min-max">13. Standardisation vs normalisation Min-Max </h2>
+<p>Il ne faut pas confondre <strong>normalisation Min-Max</strong> et <strong>standardisation</strong>.</p>
+<p>La normalisation Min-Max ramène les valeurs entre 0 et 1 :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>x_scaled = (x - min) / (max - min)
+</code></pre><p>La standardisation transforme les valeurs en fonction de la moyenne et de l’écart-type :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>z = (x - moyenne) / écart-type
+</code></pre><p>La standardisation donne une variable centrée autour de 0, avec un écart-type de 1. Elle est souvent utilisée quand les données suivent approximativement une loi normale ou quand l’algorithme suppose des variables centrées.</p>
+<hr>
+<h2 id="14-classification-binaire">14. Classification binaire </h2>
+<p>La <strong>classification binaire</strong> est un problème de Machine Learning où le modèle doit choisir entre deux classes. Dans le cours, l’exemple donné est une classification entre pomme et raisin, où le modèle prédit <code>1</code> pour pomme et <code>0</code> pour raisin.</p>
+<p>Autre exemple : prédire si un email est un spam (<code>1</code>) ou non spam (<code>0</code>).</p>
+<hr>
+<h2 id="15-matrice-de-confusion">15. Matrice de confusion </h2>
+<p>La <strong>matrice de confusion</strong> est un tableau qui permet d’évaluer les performances d’un modèle de classification. Les lignes représentent les classes réelles, et les colonnes représentent les classes prédites. Chaque cellule indique combien d’observations appartiennent à une vraie classe et ont été prédites dans une certaine classe.</p>
+<p>Pour une classification binaire :</p>
+<table>
+<thead>
+<tr>
+<th>Réel / Prédit</th>
+<th style="text-align:right">Positif prédit</th>
+<th style="text-align:right">Négatif prédit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Positif réel</td>
+<td style="text-align:right">TP</td>
+<td style="text-align:right">FN</td>
+</tr>
+<tr>
+<td>Négatif réel</td>
+<td style="text-align:right">FP</td>
+<td style="text-align:right">TN</td>
+</tr>
+</tbody>
+</table>
+<p>Les quatre termes à connaître sont :</p>
+<p><strong>TP — True Positive</strong> : le modèle prédit positif et la vraie classe est positive.</p>
+<p><strong>TN — True Negative</strong> : le modèle prédit négatif et la vraie classe est négative.</p>
+<p><strong>FP — False Positive</strong> : le modèle prédit positif alors que la vraie classe est négative.</p>
+<p><strong>FN — False Negative</strong> : le modèle prédit négatif alors que la vraie classe est positive.</p>
+<p>Exemple concret : dans une détection de spam, un faux positif signifie qu’un email normal est classé comme spam. Un faux négatif signifie qu’un spam passe dans la boîte de réception.</p>
+<hr>
+<h2 id="16-accuracy">16. Accuracy </h2>
+<p>L’<strong>accuracy</strong>, ou taux de bonne classification, mesure la proportion totale de prédictions correctes.</p>
+<p>Formule :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Accuracy = (TP + TN) / (TP + TN + FP + FN)
+</code></pre><p>Dans l’exemple pomme/raisin du cours :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>TP = 5
+TN = 5
+FP = 2
+FN = 3
+
+Accuracy = (5 + 5) / 15 = 10 / 15 = 0,66 = 66 %
+</code></pre><p>Une accuracy élevée signifie que le modèle classe correctement une grande partie des observations. Mais attention : l’accuracy peut être trompeuse si les classes sont déséquilibrées.</p>
+<p>Exemple : si 95 % des emails ne sont pas des spams, un modèle qui prédit toujours “non spam” aura 95 % d’accuracy, mais sera inutile pour détecter les vrais spams.</p>
+<hr>
+<h2 id="17-precision">17. Precision </h2>
+<p>La <strong>precision</strong> mesure la proportion de vrais positifs parmi tous les éléments prédits positifs.</p>
+<p>Formule :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Precision = TP / (TP + FP)
+</code></pre><p>Dans l’exemple du cours :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Precision = 5 / (5 + 2) = 0,714 = 71 %
+</code></pre><p>Une precision élevée signifie que le modèle fait peu de faux positifs.</p>
+<p>La precision est importante quand les faux positifs coûtent cher. Exemple : accuser à tort une transaction bancaire d’être frauduleuse peut bloquer inutilement un client.</p>
+<hr>
+<h2 id="18-recall">18. Recall </h2>
+<p>Le <strong>recall</strong>, ou rappel, mesure la proportion de vrais positifs retrouvés parmi tous les positifs réels.</p>
+<p>Formule :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Recall = TP / (TP + FN)
+</code></pre><p>Dans l’exemple du cours :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Recall = 5 / (5 + 3) = 0,625 = 62,5 %
+</code></pre><p>Un recall élevé signifie que le modèle rate peu de vrais positifs.</p>
+<p>Le recall est important quand les faux négatifs sont graves. Exemple : dans un diagnostic médical, rater un patient malade est souvent plus problématique que signaler un cas suspect à vérifier.</p>
+<hr>
+<h2 id="19-f1-score">19. F1-score </h2>
+<p>Le <strong>F1-score</strong> est la moyenne harmonique entre precision et recall.</p>
+<p>Formule :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>F1 = 2 × (Precision × Recall) / (Precision + Recall)
+</code></pre><p>Le F1-score est utile quand on veut un compromis entre precision et recall, notamment lorsque les classes sont déséquilibrées.</p>
+<p>Contrairement à une moyenne classique, la moyenne harmonique pénalise les grands écarts. Si la precision est très élevée mais que le recall est très faible, le F1-score sera faible.</p>
+<hr>
+<h2 id="20-choisir-la-bonne-métrique">20. Choisir la bonne métrique </h2>
+<p>Il ne faut pas choisir une métrique au hasard.</p>
+<p>L’accuracy est pertinente si les classes sont équilibrées et si les erreurs ont un coût similaire.</p>
+<p>La precision est prioritaire si les faux positifs sont coûteux.</p>
+<p>Le recall est prioritaire si les faux négatifs sont coûteux.</p>
+<p>Le F1-score est utile quand on cherche un équilibre entre precision et recall.</p>
+<p>Exemples :</p>
+<table>
+<thead>
+<tr>
+<th>Cas</th>
+<th>Métrique prioritaire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Détection de spam</td>
+<td>Precision ou F1</td>
+</tr>
+<tr>
+<td>Diagnostic médical</td>
+<td>Recall</td>
+</tr>
+<tr>
+<td>Détection de fraude</td>
+<td>Recall ou F1</td>
+</tr>
+<tr>
+<td>Classification équilibrée simple</td>
+<td>Accuracy</td>
+</tr>
+<tr>
+<td>Dataset déséquilibré</td>
+<td>Precision, recall, F1</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="21-exercice-du-document--emails-spam--non-spam">21. Exercice du document : emails spam / non spam </h2>
+<p>Données :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>ACTUAL <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+PREDICTION <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+</code></pre><p>On considère <code>1 = spam</code> et <code>0 = non spam</code>.</p>
+<p>Calcul de la matrice de confusion :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>TP = 4
+TN = 3
+FP = 2
+FN = 1
+</code></pre><p>Matrice :</p>
+<table>
+<thead>
+<tr>
+<th>Réel / Prédit</th>
+<th style="text-align:right">Spam prédit</th>
+<th style="text-align:right">Non spam prédit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spam réel</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td>Non spam réel</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">3</td>
+</tr>
+</tbody>
+</table>
+<p>Accuracy :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Accuracy = (TP + TN) / total
+Accuracy = (4 + 3) / 10
+Accuracy = 0,70 = 70 %
+</code></pre><p>Precision :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Precision = TP / (TP + FP)
+Precision = 4 / (4 + 2)
+Precision = 0,667 = 66,7 %
+</code></pre><p>Recall :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Recall = TP / (TP + FN)
+Recall = 4 / (4 + 1)
+Recall = 0,80 = 80 %
+</code></pre><p>F1-score :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>F1 = 2 × (Precision × Recall) / (Precision + Recall)
+F1 = 2 × (0,667 × 0,80) / (0,667 + 0,80)
+F1 ≈ 0,727 = 72,7 %
+</code></pre><p>Interprétation : le modèle détecte correctement 80 % des vrais spams, mais lorsqu’il prédit “spam”, il a raison environ 66,7 % du temps. Il fait donc quelques faux positifs, c’est-à-dire qu’il classe certains emails normaux comme spam.</p>
+<hr>
+<h2 id="22-encodage-des-variables-catégorielles">22. Encodage des variables catégorielles </h2>
+<p>En Machine Learning, les modèles travaillent généralement avec des valeurs numériques. Or, beaucoup de datasets contiennent des variables catégorielles comme <code>ville</code>, <code>sexe</code>, <code>pays</code>, <code>type_client</code>, <code>catégorie_produit</code>, etc. Il faut donc transformer ces valeurs textuelles en nombres avant d’entraîner un modèle.</p>
+<p>Une <strong>variable catégorielle</strong> est une variable qui prend un nombre limité de catégories. Par exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Ville = Paris, Lyon, Marseille
+</code></pre><p>Le problème est qu’un modèle ne sait pas directement interpréter <code>"Paris"</code> ou <code>"Lyon"</code>. Il faut donc encoder ces catégories.</p>
+<hr>
+<h2 id="23-label-encoding">23. Label Encoding </h2>
+<p>Le <strong>Label Encoding</strong> consiste à remplacer chaque catégorie par un entier.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Paris     → 0
+Lyon      → 1
+Marseille → 2
+</code></pre><p>En Python :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword keyword-import">import</span> LabelEncoder
+
+encoder <span class="token operator">=</span> LabelEncoder<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df<span class="token punctuation">[</span><span class="token string">"ville_encoded"</span><span class="token punctuation">]</span> <span class="token operator">=</span> encoder<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">"ville"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre><p>Le problème est que cette méthode peut créer un <strong>ordre artificiel</strong> entre les catégories. Le modèle pourrait croire que <code>Marseille &gt; Lyon &gt; Paris</code>, alors que cet ordre n’a aucun sens.</p>
+<p>Le Label Encoding est pertinent surtout pour les variables ordinales, c’est-à-dire les catégories qui ont un vrai ordre.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Faible → 0
+Moyen  → 1
+Élevé  → 2
+</code></pre><p>Ici, l’ordre a du sens.</p>
+<hr>
+<h2 id="24-one-hot-encoding">24. One-Hot Encoding </h2>
+<p>Le <strong>One-Hot Encoding</strong> consiste à créer une colonne binaire pour chaque catégorie.</p>
+<p>Exemple avec une colonne <code>ville</code> :</p>
+<table>
+<thead>
+<tr>
+<th>ville</th>
+<th style="text-align:right">ville_Paris</th>
+<th style="text-align:right">ville_Lyon</th>
+<th style="text-align:right">ville_Marseille</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Paris</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>Lyon</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>Marseille</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+</tr>
+</tbody>
+</table>
+<p>Chaque catégorie devient une variable qui vaut <code>1</code> si l’observation appartient à cette catégorie, sinon <code>0</code>.</p>
+<p>En Pandas :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>df_encoded <span class="token operator">=</span> pd<span class="token punctuation">.</span>get_dummies<span class="token punctuation">(</span>df<span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"ville"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre><p>Avec Scikit-learn :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword keyword-import">import</span> OneHotEncoder
+
+encoder <span class="token operator">=</span> OneHotEncoder<span class="token punctuation">(</span><span class="token punctuation">)</span>
+encoded <span class="token operator">=</span> encoder<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"ville"</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre><p>Le One-Hot Encoding est généralement adapté aux variables nominales, c’est-à-dire les catégories sans ordre logique.</p>
+<p>Exemples :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Ville : Paris, Lyon, Marseille
+Couleur : rouge, bleu, vert
+Type de client : particulier, entreprise, association
+</code></pre><hr>
+<h2 id="25-dummy-variable-trap">25. Dummy Variable Trap </h2>
+<p>Quand on utilise le One-Hot Encoding, on crée parfois une colonne de trop.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>ville_Paris
+ville_Lyon
+ville_Marseille
+</code></pre><p>Si <code>ville_Paris = 0</code> et <code>ville_Lyon = 0</code>, alors on sait forcément que la ville est Marseille. La troisième colonne est donc redondante.</p>
+<p>Cette redondance peut poser problème dans certains modèles linéaires, comme la régression linéaire ou la régression logistique, car elle crée de la multicolinéarité.</p>
+<p>Solution :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>df_encoded <span class="token operator">=</span> pd<span class="token punctuation">.</span>get_dummies<span class="token punctuation">(</span>df<span class="token punctuation">,</span> columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"ville"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> drop_first<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+</code></pre><p>Avec <code>drop_first=True</code>, Pandas supprime une catégorie de référence.</p>
+<hr>
+<h2 id="26-ordinal-encoding">26. Ordinal Encoding </h2>
+<p>L’<strong>Ordinal Encoding</strong> est utilisé quand les catégories ont un ordre naturel.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Niveau d’étude : Bac &lt; Licence &lt; Master &lt; Doctorat
+Satisfaction : faible &lt; moyenne &lt; élevée
+Risque : bas &lt; moyen &lt; haut
+</code></pre><p>On peut alors encoder ainsi :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Faible → 0
+Moyen  → 1
+Élevé  → 2
+</code></pre><p>Avec Scikit-learn :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword keyword-import">import</span> OrdinalEncoder
+
+encoder <span class="token operator">=</span> OrdinalEncoder<span class="token punctuation">(</span>categories<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"faible"</span><span class="token punctuation">,</span> <span class="token string">"moyen"</span><span class="token punctuation">,</span> <span class="token string">"élevé"</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+df<span class="token punctuation">[</span><span class="token string">"niveau_encoded"</span><span class="token punctuation">]</span> <span class="token operator">=</span> encoder<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"niveau"</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre><p>La différence avec le Label Encoding est qu’ici, on définit explicitement un ordre qui a du sens métier.</p>
+<hr>
+<h2 id="27-quand-utiliser-quel-encodage-">27. Quand utiliser quel encodage ? </h2>
+<table>
+<thead>
+<tr>
+<th>Type de variable</th>
+<th>Exemple</th>
+<th>Encodage conseillé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Catégorielle sans ordre</td>
+<td>Ville, pays, couleur</td>
+<td>One-Hot Encoding</td>
+</tr>
+<tr>
+<td>Catégorielle avec ordre</td>
+<td>Faible, moyen, élevé</td>
+<td>Ordinal Encoding</td>
+</tr>
+<tr>
+<td>Beaucoup de catégories</td>
+<td>Code postal, produit, utilisateur</td>
+<td>Encodage spécifique</td>
+</tr>
+<tr>
+<td>Variable cible en classification</td>
+<td>Spam / non spam</td>
+<td>Label Encoding possible</td>
+</tr>
+</tbody>
+</table>
+<p>À retenir simplement :<br>
+<strong>si les catégories n’ont pas d’ordre, on utilise plutôt One-Hot Encoding ; si elles ont un ordre, on utilise plutôt Ordinal Encoding.</strong></p>
+<hr>
+<h2 id="28-limite-du-one-hot-encoding">28. Limite du One-Hot Encoding </h2>
+<p>Le One-Hot Encoding peut créer beaucoup de colonnes si la variable contient beaucoup de catégories.</p>
+<p>Exemple : si une colonne <code>ville</code> contient 1 000 villes différentes, le One-Hot Encoding peut créer 1 000 nouvelles colonnes. Cela peut rendre le dataset lourd, plus difficile à traiter, et parfois moins performant.</p>
+<p>Dans ce cas, on peut envisager d’autres méthodes comme :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Target Encoding
+Frequency Encoding
+Hashing Encoding
+Regroupement des catégories rares
+</code></pre><p>Ces méthodes sont plus avancées, mais l’idée à retenir est simple : <strong>One-Hot Encoding est très bien pour peu de catégories, mais devient problématique avec beaucoup de catégories.</strong></p>
+<hr>
+<h2 id="29-scaling-après-encodage">29. Scaling après encodage </h2>
+<p>Après encodage, on peut appliquer un scaling aux variables numériques, mais il ne faut pas forcément scaler les colonnes issues du One-Hot Encoding, car elles valent déjà <code>0</code> ou <code>1</code>.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>taille, revenu → scaling possible
+ville_Paris, ville_Lyon → pas forcément nécessaire
+</code></pre><p>Le scaling reste surtout utile pour les variables numériques continues, comme la taille, le revenu, l’âge ou le montant d’un achat.</p>
+<hr>
+<h2 id="30-pipeline-correct-de-préparation-des-données">30. Pipeline correct de préparation des données </h2>
+<p>Une bonne logique de préparation est :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>1. Charger les données
+2. Explorer les données
+3. Nettoyer les valeurs manquantes
+4. Corriger les types
+5. Encoder les variables catégorielles
+6. Scaler les variables numériques
+7. Séparer train/test
+8. Entraîner le modèle
+9. Évaluer le modèle
+</code></pre><p>Point important : dans un vrai projet, il faut éviter d’apprendre les transformations sur tout le dataset avant le split train/test. Sinon, on risque une <strong>data leakage</strong>, c’est-à-dire une fuite d’information du test set vers le train set.</p>
+<p>La bonne pratique est d’apprendre les transformations sur le train set, puis de les appliquer au test set.</p>
+<hr>
+<h2 id="31-data-leakage">31. Data Leakage </h2>
+<p>Le <strong>data leakage</strong> arrive quand le modèle a accès, directement ou indirectement, à une information qu’il ne devrait pas connaître au moment de la prédiction.</p>
+<p>Exemple d’erreur :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>scaler<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>df<span class="token punctuation">)</span>
+</code></pre><p>avant d’avoir séparé train et test.</p>
+<p>Bonne pratique :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>scaler<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_train<span class="token punctuation">)</span>
+X_train_scaled <span class="token operator">=</span> scaler<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>X_train<span class="token punctuation">)</span>
+X_test_scaled <span class="token operator">=</span> scaler<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span>
+</code></pre><p>Même logique pour le One-Hot Encoding :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>encoder<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_train<span class="token punctuation">)</span>
+X_train_encoded <span class="token operator">=</span> encoder<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>X_train<span class="token punctuation">)</span>
+X_test_encoded <span class="token operator">=</span> encoder<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>X_test<span class="token punctuation">)</span>
+</code></pre><p>Le modèle doit apprendre les règles de transformation uniquement à partir des données d’entraînement.</p>
+<hr>
+<h2 id="32-train--test-split">32. Train / test split </h2>
+<p>Le <strong>train / test split</strong> consiste à séparer le dataset en deux parties : une partie pour entraîner le modèle et une partie pour l’évaluer. Le modèle apprend sur le <strong>train set</strong>, puis il est testé sur le <strong>test set</strong>, c’est-à-dire sur des données qu’il n’a jamais vues.</p>
+<p>L’objectif est de vérifier si le modèle est capable de <strong>généraliser</strong>, et pas seulement de mémoriser les données d’entraînement.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword keyword-import">import</span> train_test_split
+
+X_train<span class="token punctuation">,</span> X_test<span class="token punctuation">,</span> y_train<span class="token punctuation">,</span> y_test <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>
+    X<span class="token punctuation">,</span> y<span class="token punctuation">,</span>
+    test_size<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">,</span>
+    random_state<span class="token operator">=</span><span class="token number">42</span>
+<span class="token punctuation">)</span>
+</code></pre><p>Ici, <code>test_size=0.2</code> signifie que 20 % des données sont gardées pour le test, et 80 % servent à l’entraînement.</p>
+<p>À retenir :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Train set = données utilisées pour apprendre
+Test set = données utilisées pour évaluer
+</code></pre><p>Sans séparation train/test, on risque de croire qu’un modèle est performant alors qu’il a simplement appris les données par cœur. C’est donc une étape fondamentale dans un projet de Machine Learning.</p>
+<hr>
+<h2 id="33-corrélation-entre-variables">33. Corrélation entre variables </h2>
+<p>La <strong>corrélation</strong> mesure le lien statistique entre deux variables numériques. Elle permet de voir si deux variables évoluent ensemble.</p>
+<p>Exemple :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Si le revenu augmente quand l’âge augmente, il peut y avoir une corrélation positive.
+Si une variable diminue quand une autre augmente, il peut y avoir une corrélation négative.
+Si les deux variables ne semblent pas liées, la corrélation est proche de 0.
+</code></pre><p>En Python, on peut calculer une matrice de corrélation avec :</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>df<span class="token punctuation">.</span>corr<span class="token punctuation">(</span>numeric_only<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+</code></pre><p>Les valeurs de corrélation sont généralement comprises entre <code>-1</code> et <code>1</code>.</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Corrélation proche de 1  → forte relation positive
+Corrélation proche de -1 → forte relation négative
+Corrélation proche de 0  → faible relation linéaire
+</code></pre><p>La corrélation est utile pendant l’EDA, car elle permet d’identifier des variables potentiellement importantes, redondantes ou problématiques.</p>
+<p>Exemple : si deux variables sont très fortement corrélées, elles apportent peut-être presque la même information au modèle. Dans certains modèles, notamment les modèles linéaires, cela peut poser des problèmes de multicolinéarité.</p>
+<p>Attention : une corrélation ne signifie pas forcément une causalité. Deux variables peuvent évoluer ensemble sans que l’une soit la cause de l’autre.</p>
+<hr>
+<h2 id="34-différence-entre-classification-et-régression">34. Différence entre classification et régression </h2>
+<p>En Machine Learning supervisé, on distingue principalement deux grands types de problèmes : la <strong>classification</strong> et la <strong>régression</strong>.</p>
+<p>La <strong>classification</strong> consiste à prédire une catégorie ou une classe.</p>
+<p>Exemples :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Email → spam ou non spam
+Client → risqué ou non risqué
+Image → chien ou chat
+Transaction → frauduleuse ou normale
+</code></pre><p>Dans une classification binaire, il n’y a que deux classes possibles, par exemple <code>spam = 1</code> et <code>non spam = 0</code>.</p>
+<p>Les métriques classiques pour évaluer une classification sont :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Accuracy
+Precision
+Recall
+F1-score
+Matrice de confusion
+</code></pre><p>La <strong>régression</strong> consiste à prédire une valeur numérique continue.</p>
+<p>Exemples :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Prix d’un appartement
+Revenu d’une personne
+Température prévue demain
+Montant futur d’une vente
+</code></pre><p>Les métriques classiques pour évaluer une régression sont différentes :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>MAE  = erreur absolue moyenne
+MSE  = erreur quadratique moyenne
+RMSE = racine de l’erreur quadratique moyenne
+R²   = part de la variance expliquée par le modèle
+</code></pre><p>À retenir simplement :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Classification = prédire une classe
+Régression = prédire une valeur numérique
+</code></pre><p>Exemple concret :</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Prédire si un appartement est “cher” ou “pas cher” → classification
+Prédire le prix exact d’un appartement → régression
+</code></pre><p>Cette distinction est essentielle, car elle détermine le type de modèle à utiliser, les transformations à appliquer et les métriques d’évaluation à choisir.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
