@@ -1,0 +1,407 @@
+<!DOCTYPE html><html><head>
+      <title>QCM machine learning</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\wandr\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.30\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-details{margin:0;padding:0;border:none}.markdown-preview .md-toc summary.md-toc-link-wrapper{cursor:pointer;list-style-position:outside}.markdown-preview .md-toc summary.md-toc-link-wrapper::marker{font-size:.85em}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='0']{margin-left:12px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='1']{margin-left:28px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='2']{margin-left:44px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='3']{margin-left:60px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='4']{margin-left:76px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='5']{margin-left:80px}.markdown-preview a.tag,.markdown-preview a.tag:active,.markdown-preview a.tag:link,.markdown-preview a.tag:visited,.markdown-preview span.tag:not(.token){display:inline-block;background-color:var(--vscode-badge-background,rgba(127,127,127,.18));color:var(--vscode-badge-foreground,currentColor);border-radius:2em;font-size:.85em;font-weight:500;padding:.05em .55em;line-height:1.5;white-space:nowrap;text-decoration:none;text-shadow:none;box-shadow:none;transition:background-color .12s ease,opacity .12s ease}.markdown-preview a.tag{cursor:pointer}.markdown-preview a.tag:focus,.markdown-preview a.tag:hover{background-color:var(--vscode-badge-background,rgba(127,127,127,.32));color:var(--vscode-badge-foreground,currentColor);opacity:.85;text-decoration:none;outline:0}.markdown-preview .wikilink-embed-content{border-left:3px solid var(--vscode-textBlockQuote-border,rgba(128,128,128,.3));background:var(--vscode-textBlockQuote-background,rgba(128,128,128,.05));margin:.5em 0;padding:.5em .75em;border-radius:0 3px 3px 0}.markdown-preview .wikilink-embed-content.wikilink-embed-error{border-left-color:var(--vscode-errorForeground,#cf222e);color:var(--vscode-errorForeground,#cf222e);font-style:italic;opacity:.8}.markdown-preview .wikilink-embed-content h1:first-child,.markdown-preview .wikilink-embed-content h2:first-child,.markdown-preview .wikilink-embed-content h3:first-child,.markdown-preview .wikilink-embed-content h4:first-child,.markdown-preview .wikilink-embed-content h5:first-child,.markdown-preview .wikilink-embed-content h6:first-child{margin-top:.25em}.markdown-preview .wikilink-embed-content .wikilink-embed-content{margin:.25em 0;padding:.25em .5em}.markdown-preview .block-id{display:none}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:var(--vscode-scrollbarSlider-background,rgba(150,150,150,.66));border:4px solid var(--vscode-scrollbarSlider-background,rgba(150,150,150,.66));background-clip:content-box}.scrollbar-style::-webkit-scrollbar-thumb:hover{background-color:var(--vscode-scrollbarSlider-hoverBackground,rgba(120,120,120,.66))}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:var(--vscode-scrollbarSlider-background,rgba(150,150,150,.66));border:4px solid var(--vscode-scrollbarSlider-background,rgba(150,150,150,.66));background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb:hover{background-color:var(--vscode-scrollbarSlider-hoverBackground,rgba(120,120,120,.66))}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-details{margin:0;padding:0;border:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='0']{padding-left:0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='1']{padding-left:16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='2']{padding-left:32px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='3']{padding-left:48px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='4']{padding-left:64px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='5']{padding-left:80px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. -->
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+    </head>
+    <body for="html-export">
+      <p style="max-width:914px;margin:1rem auto 0;padding:0 2rem;"><a href="index.html">&larr; Retour &agrave; la mati&egrave;re</a></p>
+      <div class="crossnote markdown-preview  ">
+      
+<p>Voici un QCM de 50 questions construit à partir des deux fiches de révision : la première couvre Pandas, EDA, nettoyage, scaling, encodage, métriques, data leakage, train/test split, classification et régression ; la seconde couvre surtout les arbres de décision, KNN Regressor, Decision Tree Regressor, MAE, R², overfitting et comparaison de modèles.</p>
+<h1 id="qcm-machine-learning--50-questions">QCM Machine Learning — 50 questions </h1>
+<h2 id="partie-1--pandas-dataframe-et-eda">Partie 1 — Pandas, DataFrame et EDA </h2>
+<h3 id="question-1">Question 1 </h3>
+<p>Dans un DataFrame Pandas, que représentent généralement les colonnes ?</p>
+<p>A. Les observations<br>
+B. Les variables<br>
+C. Les index uniquement<br>
+D. Les valeurs manquantes</p>
+<h3 id="question-2">Question 2 </h3>
+<p>Quelle commande permet d’obtenir les types des colonnes, le nombre de valeurs non nulles et la mémoire utilisée ?</p>
+<p>A. <code>df.describe()</code><br>
+B. <code>df.columns()</code><br>
+C. <code>df.info()</code><br>
+D. <code>df.shape()</code></p>
+<h3 id="question-3">Question 3 </h3>
+<p>Quelle est la différence principale entre <code>.loc[]</code> et <code>.iloc[]</code> ?</p>
+<p>A. <code>.loc[]</code> sélectionne par position, <code>.iloc[]</code> par label<br>
+B. <code>.loc[]</code> sélectionne par label, <code>.iloc[]</code> par position<br>
+C. <code>.loc[]</code> sert uniquement aux colonnes numériques<br>
+D. <code>.iloc[]</code> sert uniquement aux chaînes de caractères</p>
+<h3 id="question-4">Question 4 </h3>
+<p>Quelle ligne permet de filtrer les lignes où <code>age &gt; 25</code> et <code>city == "Paris"</code> ?</p>
+<p>A. <code>df[df["age"] &gt; 25 and df["city"] == "Paris"]</code><br>
+B. <code>df[(df["age"] &gt; 25) &amp; (df["city"] == "Paris")]</code><br>
+C. <code>df["age" &gt; 25 &amp; "city" == "Paris"]</code><br>
+D. <code>df.filter(age &gt; 25, city == "Paris")</code></p>
+<h3 id="question-5">Question 5 </h3>
+<p>Pourquoi utilise-t-on souvent <code>index=False</code> avec <code>df.to_csv()</code> ?</p>
+<p>A. Pour supprimer toutes les lignes vides<br>
+B. Pour éviter d’exporter l’index Pandas comme colonne supplémentaire<br>
+C. Pour convertir les colonnes en texte<br>
+D. Pour trier automatiquement le fichier CSV</p>
+<h3 id="question-6">Question 6 </h3>
+<p>Quel est l’objectif principal de l’EDA ?</p>
+<p>A. Entraîner automatiquement le meilleur modèle<br>
+B. Comprendre les données avant la modélisation<br>
+C. Supprimer toutes les variables catégorielles<br>
+D. Remplacer systématiquement tous les outliers</p>
+<h3 id="question-7">Question 7 </h3>
+<p>Quelle commande permet de supprimer les doublons dans un DataFrame ?</p>
+<p>A. <code>df.drop_duplicates()</code><br>
+B. <code>df.remove_duplicates()</code><br>
+C. <code>df.clean_duplicates()</code><br>
+D. <code>df.dropna()</code></p>
+<h3 id="question-8">Question 8 </h3>
+<p>Quelle affirmation est correcte concernant les valeurs manquantes ?</p>
+<p>A. Il faut toujours supprimer toutes les lignes contenant une valeur manquante<br>
+B. Il faut toujours remplacer les valeurs manquantes par 0<br>
+C. La suppression ou l’imputation dépend du contexte et de la quantité d’information perdue<br>
+D. Les valeurs manquantes n’ont aucun impact sur un modèle</p>
+<h3 id="question-9">Question 9 </h3>
+<p>Pourquoi ne faut-il pas supprimer automatiquement tous les outliers ?</p>
+<p>A. Parce qu’un outlier peut être une vraie valeur rare mais informative<br>
+B. Parce que les outliers améliorent toujours les modèles<br>
+C. Parce que Pandas interdit leur suppression<br>
+D. Parce que les outliers ne concernent que les variables textuelles</p>
+<h3 id="question-10">Question 10 </h3>
+<p>Quelle commande donne des statistiques descriptives sur les variables numériques ?</p>
+<p>A. <code>df.summary()</code><br>
+B. <code>df.describe()</code><br>
+C. <code>df.head()</code><br>
+D. <code>df.types()</code></p>
+<hr>
+<h2 id="partie-2--scaling-encodage-et-préparation-des-données">Partie 2 — Scaling, encodage et préparation des données </h2>
+<h3 id="question-11">Question 11 </h3>
+<p>Quelle est la formule du Min-Max Scaling ?</p>
+<p>A. <code>x_scaled = x / moyenne</code><br>
+B. <code>x_scaled = (x - min) / (max - min)</code><br>
+C. <code>x_scaled = (x - moyenne) / écart-type</code><br>
+D. <code>x_scaled = x² / max</code></p>
+<h3 id="question-12">Question 12 </h3>
+<p>Que produit une standardisation avec <code>StandardScaler</code> ?</p>
+<p>A. Des valeurs toujours comprises entre 0 et 1<br>
+B. Une variable centrée autour de 0 avec un écart-type de 1<br>
+C. Une variable uniquement positive<br>
+D. Une suppression des valeurs extrêmes</p>
+<h3 id="question-13">Question 13 </h3>
+<p>Quel algorithme est particulièrement sensible au scaling ?</p>
+<p>A. KNN<br>
+B. Arbre de décision<br>
+C. Random Forest<br>
+D. Gradient Boosting</p>
+<h3 id="question-14">Question 14 </h3>
+<p>Pourquoi KNN est-il sensible au scaling ?</p>
+<p>A. Parce qu’il utilise des règles symboliques<br>
+B. Parce qu’il utilise des distances entre observations<br>
+C. Parce qu’il ne fonctionne qu’avec des variables binaires<br>
+D. Parce qu’il ignore les variables numériques</p>
+<h3 id="question-15">Question 15 </h3>
+<p>Quel encodage est généralement adapté à une variable nominale sans ordre logique, comme <code>ville</code> ?</p>
+<p>A. Label Encoding<br>
+B. One-Hot Encoding<br>
+C. Ordinal Encoding<br>
+D. StandardScaler</p>
+<h3 id="question-16">Question 16 </h3>
+<p>Quel est le risque principal du Label Encoding sur une variable nominale ?</p>
+<p>A. Il supprime les lignes du dataset<br>
+B. Il crée un ordre artificiel entre les catégories<br>
+C. Il transforme les nombres en texte<br>
+D. Il empêche le train/test split</p>
+<h3 id="question-17">Question 17 </h3>
+<p>Quel encodage est adapté à une variable comme <code>faible &lt; moyen &lt; élevé</code> ?</p>
+<p>A. One-Hot Encoding<br>
+B. Ordinal Encoding<br>
+C. Hashing Encoding uniquement<br>
+D. Min-Max Scaling</p>
+<h3 id="question-18">Question 18 </h3>
+<p>Que signifie le problème de la Dummy Variable Trap ?</p>
+<p>A. Le modèle ne peut pas lire les colonnes numériques<br>
+B. Une colonne créée par One-Hot Encoding peut être redondante avec les autres<br>
+C. Les valeurs manquantes sont remplacées par des catégories<br>
+D. Le test set devient plus grand que le train set</p>
+<h3 id="question-19">Question 19 </h3>
+<p>Pourquoi peut-on utiliser <code>drop_first=True</code> avec <code>pd.get_dummies()</code> ?</p>
+<p>A. Pour supprimer toutes les catégories rares<br>
+B. Pour éviter une colonne redondante après One-Hot Encoding<br>
+C. Pour convertir les variables numériques en texte<br>
+D. Pour normaliser automatiquement les données</p>
+<h3 id="question-20">Question 20 </h3>
+<p>Quelle est une limite importante du One-Hot Encoding ?</p>
+<p>A. Il ne fonctionne qu’avec les variables numériques<br>
+B. Il peut créer énormément de colonnes si la variable a beaucoup de catégories<br>
+C. Il transforme toujours les catégories en valeurs entre -1 et 1<br>
+D. Il empêche l’utilisation des arbres de décision</p>
+<hr>
+<h2 id="partie-3--traintest-split-data-leakage-et-corrélation">Partie 3 — Train/test split, data leakage et corrélation </h2>
+<h3 id="question-21">Question 21 </h3>
+<p>Quel est le rôle du train set ?</p>
+<p>A. Évaluer le modèle sur des données inconnues<br>
+B. Entraîner le modèle<br>
+C. Remplacer les valeurs manquantes<br>
+D. Calculer uniquement la matrice de confusion</p>
+<h3 id="question-22">Question 22 </h3>
+<p>Quel est le rôle du test set ?</p>
+<p>A. Permettre au modèle d’apprendre les paramètres<br>
+B. Évaluer la capacité du modèle à généraliser<br>
+C. Modifier les hyperparamètres automatiquement<br>
+D. Supprimer les outliers</p>
+<h3 id="question-23">Question 23 </h3>
+<p>Dans <code>train_test_split(X, y, test_size=0.2)</code>, que signifie <code>test_size=0.2</code> ?</p>
+<p>A. 20 % des données servent au test<br>
+B. 20 % des données sont supprimées<br>
+C. 20 variables sont utilisées<br>
+D. Le modèle est entraîné 20 fois</p>
+<h3 id="question-24">Question 24 </h3>
+<p>Pourquoi utilise-t-on <code>random_state=42</code> ?</p>
+<p>A. Pour rendre les résultats reproductibles<br>
+B. Pour augmenter automatiquement l’accuracy<br>
+C. Pour supprimer les valeurs manquantes<br>
+D. Pour éviter les variables catégorielles</p>
+<h3 id="question-25">Question 25 </h3>
+<p>Quel exemple correspond à une fuite de données, ou data leakage ?</p>
+<p>A. Faire <code>scaler.fit(X_train)</code> puis <code>scaler.transform(X_test)</code><br>
+B. Faire <code>scaler.fit_transform(df)</code> avant le train/test split<br>
+C. Faire <code>train_test_split()</code> avant l’entraînement<br>
+D. Évaluer le modèle sur le test set</p>
+<h3 id="question-26">Question 26 </h3>
+<p>Quelle est la bonne pratique avec un scaler ?</p>
+<p>A. Faire apprendre le scaler sur tout le dataset<br>
+B. Faire apprendre le scaler uniquement sur le test set<br>
+C. Faire apprendre le scaler sur le train set puis l’appliquer au test set<br>
+D. Ne jamais utiliser de scaler</p>
+<h3 id="question-27">Question 27 </h3>
+<p>Une corrélation proche de <code>1</code> signifie généralement :</p>
+<p>A. Une forte relation positive<br>
+B. Une forte relation négative<br>
+C. Une absence totale de relation<br>
+D. Une preuve de causalité</p>
+<h3 id="question-28">Question 28 </h3>
+<p>Quelle affirmation est correcte ?</p>
+<p>A. Corrélation implique toujours causalité<br>
+B. Une corrélation proche de 0 signifie forcément que deux variables sont identiques<br>
+C. Une forte corrélation peut signaler une relation ou une redondance entre variables<br>
+D. La corrélation ne s’utilise que sur des variables catégorielles</p>
+<h3 id="question-29">Question 29 </h3>
+<p>Dans une régression, que représente généralement <code>y</code> ?</p>
+<p>A. Les variables explicatives<br>
+B. La variable cible à prédire<br>
+C. Le train set uniquement<br>
+D. Le nombre de colonnes</p>
+<h3 id="question-30">Question 30 </h3>
+<p>Dans <code>X = df.drop(columns="price")</code>, que représente <code>X</code> ?</p>
+<p>A. La variable cible<br>
+B. Les variables explicatives<br>
+C. Les prédictions du modèle<br>
+D. Les erreurs du modèle</p>
+<hr>
+<h2 id="partie-4--classification-métriques-et-matrice-de-confusion">Partie 4 — Classification, métriques et matrice de confusion </h2>
+<h3 id="question-31">Question 31 </h3>
+<p>Quel problème correspond à une classification ?</p>
+<p>A. Prédire le prix exact d’un appartement<br>
+B. Prédire la température de demain<br>
+C. Prédire si un email est spam ou non spam<br>
+D. Prédire le chiffre d’affaires exact du mois prochain</p>
+<h3 id="question-32">Question 32 </h3>
+<p>Quel problème correspond à une régression ?</p>
+<p>A. Prédire si une transaction est frauduleuse ou normale<br>
+B. Prédire le prix d’une maison<br>
+C. Prédire si une image contient un chien ou un chat<br>
+D. Prédire si un client est risqué ou non risqué</p>
+<h3 id="question-33">Question 33 </h3>
+<p>Dans une matrice de confusion, que signifie FP ?</p>
+<p>A. Le modèle prédit positif et la vraie classe est positive<br>
+B. Le modèle prédit négatif et la vraie classe est négative<br>
+C. Le modèle prédit positif alors que la vraie classe est négative<br>
+D. Le modèle prédit négatif alors que la vraie classe est positive</p>
+<h3 id="question-34">Question 34 </h3>
+<p>Dans une matrice de confusion, que signifie FN ?</p>
+<p>A. Le modèle prédit négatif alors que la vraie classe est positive<br>
+B. Le modèle prédit positif alors que la vraie classe est négative<br>
+C. Le modèle prédit positif et la vraie classe est positive<br>
+D. Le modèle prédit négatif et la vraie classe est négative</p>
+<h3 id="question-35">Question 35 </h3>
+<p>Quelle est la formule de l’accuracy ?</p>
+<p>A. <code>TP / (TP + FP)</code><br>
+B. <code>TP / (TP + FN)</code><br>
+C. <code>(TP + TN) / (TP + TN + FP + FN)</code><br>
+D. <code>2 × precision × recall / (precision + recall)</code></p>
+<h3 id="question-36">Question 36 </h3>
+<p>Quelle est la formule de la precision ?</p>
+<p>A. <code>TP / (TP + FP)</code><br>
+B. <code>TP / (TP + FN)</code><br>
+C. <code>(TP + TN) / total</code><br>
+D. <code>TN / (TN + FP)</code></p>
+<h3 id="question-37">Question 37 </h3>
+<p>Quelle est la formule du recall ?</p>
+<p>A. <code>TP / (TP + FP)</code><br>
+B. <code>TP / (TP + FN)</code><br>
+C. <code>TN / (TN + FN)</code><br>
+D. <code>FP / (TP + FP)</code></p>
+<h3 id="question-38">Question 38 </h3>
+<p>Quelle métrique privilégier quand les faux négatifs sont très graves, par exemple en diagnostic médical ?</p>
+<p>A. Accuracy<br>
+B. Recall<br>
+C. Precision uniquement<br>
+D. Temps d’entraînement</p>
+<h3 id="question-39">Question 39 </h3>
+<p>Quelle métrique privilégier quand les faux positifs coûtent cher ?</p>
+<p>A. Precision<br>
+B. Recall<br>
+C. R²<br>
+D. MAE</p>
+<h3 id="question-40">Question 40 </h3>
+<p>Pourquoi l’accuracy peut-elle être trompeuse ?</p>
+<p>A. Parce qu’elle ne fonctionne jamais en classification<br>
+B. Parce qu’elle peut être élevée sur un dataset très déséquilibré même si le modèle est mauvais sur la classe importante<br>
+C. Parce qu’elle est uniquement utilisée en régression<br>
+D. Parce qu’elle supprime les faux positifs</p>
+<hr>
+<h2 id="partie-5--arbres-de-décision-knn-régression-et-comparaison-de-modèles">Partie 5 — Arbres de décision, KNN, régression et comparaison de modèles </h2>
+<h3 id="question-41">Question 41 </h3>
+<p>Dans un arbre de décision, que représente le root node ?</p>
+<p>A. Une feuille finale<br>
+B. Le nœud de départ de l’arbre<br>
+C. Une erreur de prédiction<br>
+D. Une variable supprimée</p>
+<h3 id="question-42">Question 42 </h3>
+<p>Dans un arbre de décision, que représente une feuille ?</p>
+<p>A. Une prédiction finale<br>
+B. Une variable à encoder<br>
+C. Le train set complet<br>
+D. Une valeur manquante</p>
+<h3 id="question-43">Question 43 </h3>
+<p>Comment un arbre de décision choisit-il un split ?</p>
+<p>A. Il choisit toujours la première colonne du dataset<br>
+B. Il teste plusieurs variables et seuils puis choisit celui qui sépare le mieux les données<br>
+C. Il choisit toujours un seuil égal à 0<br>
+D. Il utilise uniquement les variables textuelles</p>
+<h3 id="question-44">Question 44 </h3>
+<p>En classification, quels critères sont souvent utilisés pour choisir un split ?</p>
+<p>A. MAE et R²<br>
+B. Gini impurity et entropy<br>
+C. Min-Max et StandardScaler<br>
+D. Precision et recall uniquement</p>
+<h3 id="question-45">Question 45 </h3>
+<p>Dans un arbre de décision, que signifie un <code>gini</code> faible ?</p>
+<p>A. Le nœud est plutôt pur<br>
+B. Le nœud contient beaucoup de valeurs manquantes<br>
+C. Le modèle est forcément mauvais<br>
+D. La variable cible est continue</p>
+<h3 id="question-46">Question 46 </h3>
+<p>Que signifie <code>value = [35, 0, 0]</code> dans un nœud d’arbre sur Iris ?</p>
+<p>A. 35 observations dans la première classe et aucune dans les deux autres<br>
+B. 35 variables explicatives<br>
+C. 35 erreurs de prédiction<br>
+D. 35 arbres entraînés</p>
+<h3 id="question-47">Question 47 </h3>
+<p>Quel est le risque principal d’un arbre de décision trop profond ?</p>
+<p>A. Underfitting<br>
+B. Overfitting<br>
+C. Data leakage obligatoire<br>
+D. Impossibilité de prédire</p>
+<h3 id="question-48">Question 48 </h3>
+<p>Pourquoi utilise-t-on parfois <code>max_depth</code> dans un arbre ?</p>
+<p>A. Pour limiter la complexité du modèle<br>
+B. Pour augmenter le nombre de colonnes<br>
+C. Pour supprimer le test set<br>
+D. Pour convertir les catégories en nombres</p>
+<h3 id="question-49">Question 49 </h3>
+<p>Pourquoi <code>reshape(1, -1)</code> peut être nécessaire pour prédire une seule observation avec Scikit-learn ?</p>
+<p>A. Parce que Scikit-learn attend une matrice en entrée<br>
+B. Parce que Scikit-learn interdit les variables numériques<br>
+C. Parce que cela supprime les outliers<br>
+D. Parce que cela transforme une classification en régression</p>
+<h3 id="question-50">Question 50 </h3>
+<p>Quelle affirmation décrit correctement le principe général d’une méthode d’ensemble ?</p>
+<p>A. Elle supprime toutes les variables faibles<br>
+B. Elle combine plusieurs modèles pour obtenir une prédiction plus robuste<br>
+C. Elle transforme toujours une régression en classification<br>
+D. Elle remplace l’EDA par un modèle automatique</p>
+<hr>
+<h1 id="liste-des-réponses">Liste des réponses </h1>
+<ol>
+<li>B</li>
+<li>C</li>
+<li>B</li>
+<li>B</li>
+<li>B</li>
+<li>B</li>
+<li>A</li>
+<li>C</li>
+<li>A</li>
+<li>B</li>
+<li>B</li>
+<li>B</li>
+<li>A</li>
+<li>B</li>
+<li>B</li>
+<li>B</li>
+<li>B</li>
+<li>B</li>
+<li>B</li>
+<li>B</li>
+<li>B</li>
+<li>B</li>
+<li>A</li>
+<li>A</li>
+<li>B</li>
+<li>C</li>
+<li>A</li>
+<li>C</li>
+<li>B</li>
+<li>B</li>
+<li>C</li>
+<li>B</li>
+<li>C</li>
+<li>A</li>
+<li>C</li>
+<li>A</li>
+<li>B</li>
+<li>B</li>
+<li>A</li>
+<li>B</li>
+<li>B</li>
+<li>A</li>
+<li>B</li>
+<li>B</li>
+<li>A</li>
+<li>A</li>
+<li>B</li>
+<li>A</li>
+<li>A</li>
+<li>B</li>
+</ol>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
