@@ -9,6 +9,161 @@
   --radius: 8px;
 }
 
+.landing-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(90deg, rgba(248, 250, 252, 1) 0%, rgba(248, 250, 252, 0.96) 46%, rgba(248, 250, 252, 0.58) 100%),
+    url("../assets/landing-hero.png") center / cover no-repeat;
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.glass-header,
+.resource-header {
+  position: fixed;
+  z-index: 10;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(calc(100% - 32px), 1120px);
+  min-height: 64px;
+  padding: 10px 12px 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: 0 18px 52px rgba(15, 23, 42, 0.12);
+  backdrop-filter: blur(18px) saturate(155%);
+  -webkit-backdrop-filter: blur(18px) saturate(155%);
+}
+
+.resource-header {
+  position: sticky;
+  transform: none;
+  left: auto;
+  top: 16px;
+  margin: 16px auto 0;
+}
+
+.brand {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.glass-header nav,
+.resource-header nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.glass-header nav a,
+.resource-header nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  background: rgba(219, 234, 254, 0.64);
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.08);
+  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.glass-header nav a:hover,
+.resource-header nav a:hover {
+  background: rgba(219, 234, 254, 0.92);
+  border-color: rgba(37, 99, 235, 0.28);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.14);
+}
+
+.landing-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: 132px clamp(16px, 4vw, 40px) 64px;
+}
+
+.hero-copy {
+  width: min(100%, 680px);
+}
+
+.hero-kicker {
+  margin: 0 0 18px;
+  color: var(--accent);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.84rem;
+}
+
+.hero-copy h1 {
+  color: var(--text);
+  font-size: clamp(2.45rem, 6.4vw, 5.45rem);
+  line-height: 1.03;
+  margin-bottom: 22px;
+  max-width: 900px;
+}
+
+.hero-text {
+  max-width: 580px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  line-height: 1.65;
+  font-weight: 550;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.primary-action,
+.secondary-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.primary-action {
+  color: #ffffff;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  box-shadow: 0 10px 26px rgba(37, 99, 235, 0.18);
+}
+
+.secondary-action {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.primary-action:hover,
+.secondary-action:hover {
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.12);
+}
+
 * {
   box-sizing: border-box;
   font-family: Inter, system-ui, sans-serif;
@@ -26,6 +181,16 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.resources-page {
+  background:
+    linear-gradient(180deg, rgba(248, 250, 252, 0.96) 0%, rgba(248, 250, 252, 1) 280px),
+    var(--bg);
+}
+
+.resources-page .container {
+  padding-top: clamp(44px, 7vw, 84px);
 }
 
 .container {
@@ -116,13 +281,13 @@ h1 {
   align-items: center;
   border: 1px solid var(--border);
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease, background 0.15s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
   border-color: var(--accent-soft);
-  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.1);
+  background: #fbfdff;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.09);
 }
 
 .card:focus-visible,
@@ -157,13 +322,14 @@ h1 {
   line-height: 1.35;
   overflow-wrap: anywhere;
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
-  transition: color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
 .list a:hover {
   color: var(--accent);
   border-color: var(--accent-soft);
-  transform: translateX(4px);
+  background: #fbfdff;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
 }
 
 .back {
@@ -246,10 +412,74 @@ pre {
   overflow-x: auto;
 }
 
+@media (max-width: 760px) {
+  .landing-page {
+    background:
+      linear-gradient(180deg, rgba(248, 250, 252, 1) 0%, rgba(248, 250, 252, 0.94) 58%, rgba(248, 250, 252, 0.72) 100%),
+      url("../assets/landing-hero.png") 60% center / cover no-repeat;
+  }
+
+  .glass-header,
+  .resource-header {
+    top: 12px;
+    width: calc(100% - 24px);
+    min-height: 56px;
+    padding-left: 16px;
+  }
+
+  .resource-header {
+    margin-top: 12px;
+  }
+
+  .landing-hero {
+    align-items: center;
+    padding-top: 116px;
+    padding-bottom: 44px;
+  }
+
+  .hero-copy h1 {
+    max-width: 620px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .primary-action,
+  .secondary-action {
+    width: 100%;
+  }
+}
+
 @media (max-width: 520px) {
+  .brand {
+    font-size: 1.08rem;
+  }
+
+  .glass-header nav a,
+  .resource-header nav a {
+    min-height: 38px;
+    padding: 0 12px;
+    font-size: 0.94rem;
+  }
+
+  .hero-kicker {
+    margin-bottom: 14px;
+    font-size: 0.78rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.35rem, 13vw, 3.5rem);
+    line-height: 1.04;
+  }
+
   .container {
     padding-top: 28px;
     padding-bottom: 40px;
+  }
+
+  .resources-page .container {
+    padding-top: 40px;
   }
 
   .grid {
@@ -269,11 +499,6 @@ pre {
   .card,
   .list a {
     min-height: 56px;
-  }
-
-  .card:hover,
-  .list a:hover {
-    transform: none;
   }
 
   .site-footer {
