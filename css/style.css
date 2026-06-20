@@ -86,6 +86,14 @@
   box-shadow: 0 12px 28px rgba(37, 99, 235, 0.14);
 }
 
+.glass-header nav a[aria-current="page"],
+.resource-header nav a[aria-current="page"] {
+  color: #ffffff;
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.18);
+}
+
 .landing-hero {
   min-height: 100vh;
   display: flex;
@@ -459,8 +467,8 @@ pre {
   .glass-header nav a,
   .resource-header nav a {
     min-height: 38px;
-    padding: 0 12px;
-    font-size: 0.94rem;
+    padding: 0 10px;
+    font-size: 0.9rem;
   }
 
   .hero-kicker {
